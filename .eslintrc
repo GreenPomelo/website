@@ -1,0 +1,45 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["airbnb", "prettier", "prettier/react"],
+  "rules": {
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ],
+    "react/no-array-index-key": "off",
+    "import/prefer-default-export": "off",
+    "prettier/prettier": "error",
+    "react/prefer-stateless-function": "off",
+    "no-use-before-define": "off",
+    "react/jsx-closing-bracket-location": "off",
+    "react/jsx-curly-spacing": "off",
+    "react/jsx-equals-spacing": "off",
+    "react/jsx-first-prop-new-line": "off",
+    "react/jsx-indent": "off",
+    "react/jsx-indent-props": "off",
+    "react/jsx-max-props-per-line": "off",
+    "react/jsx-tag-spacing": "off",
+    "react/jsx-wrap-multilines": "off",
+    "no-useless-concat": "off",
+    "react/prop-types": "off",
+    "react/destructuring-assignment": "off",
+    "no-underscore-dangle": "off",
+    "react/no-unescaped-entities": "off",
+    "react/forbid-prop-types": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "no-param-reassign": "off"
+  },
+  "plugins": ["prettier"],
+  "globals": {
+    "localStorage": true,
+    "window": true,
+    "document": true,
+    "Event": true,
+    "FormData": true,
+    "navigator": true
+  }
+}
