@@ -33,16 +33,22 @@
       "last 1 safari version"
     ]
   },
-  "lint-staged": {
-    "*.{js}": [
-      "yarn lint",
-      "git add"
-    ]
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
   },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "yarn lint",
+      "git add"
+    ]
+  },
   "devDependencies": {
+    "husky": "^2.3.0",
     "lint-staged": "^8.1.7",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^3.3.0",
