@@ -40,6 +40,8 @@
     "document": true,
     "Event": true,
     "FormData": true,
-    "navigator": true
+    "navigator": true,
+    "fetch": true,
+    "it": true
   }
 }
