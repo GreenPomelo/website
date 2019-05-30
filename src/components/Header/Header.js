@@ -14,7 +14,7 @@ export default function Header() {
 
   const handleScroll = () => {
     const afterScrollTop = document.documentElement.scrollTop;
-    const clientWidth = document.body.clientWidth;
+    const { clientWidth } = document.body;
 
     //  宽度小于920后图片固定
     if (clientWidth <= 920) {
