@@ -21,8 +21,8 @@ export default class Header extends React.Component {
   }
 
   handleScroll() {
-    let afterscrollTop = document.documentElement.scrollTop;
-    let delta = afterscrollTop - this.state.scrollTop;
+    const afterscrollTop = document.documentElement.scrollTop;
+    const delta = afterscrollTop - this.state.scrollTop;
     //  超过第一部分后直接将图片居中
     if (afterscrollTop >= 798) {
       this.setState({
@@ -58,6 +58,7 @@ export default class Header extends React.Component {
       });
     }
   }
+
   render() {
     return (
       <div id="part1">
@@ -92,7 +93,7 @@ export default class Header extends React.Component {
           </div>
           <div
             className="top-bg"
-            style={{ right: this.state.rightDistance + 'px' }}
+            style={{ right: `${this.state.rightDistance}px` }}
           >
             <img src={TopBg} alt="" />
           </div>
