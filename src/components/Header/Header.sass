@@ -1,0 +1,193 @@
+*
+  margin: 0;
+  padding: 0;
+
+#part1
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 100vw;
+  height: 49.875rem;
+  background-image: url("../../assets/bg.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  .part1-container
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 43.125rem;
+    .head-bar
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: 4.25rem; 
+      .qylogo
+        width: 12.6875rem;
+        margin-right: 18.8125rem;
+      .nav-list
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 33rem;
+        height: 1.8125rem;
+        margin-right: 2.375rem; 
+        .nav-item
+          line-height: 1.8125rem;
+          font-size: 1.3125rem;
+        .first
+          font-weight: 600;
+          color: #6ba32a;
+        .second
+          color: #4a4a4a;
+        .third
+          color: #676767
+      button
+        width: 8.75rem;
+        height: 2.75rem;
+        font-size: 1.125rem;
+        color: #606266;
+        outline: none;
+        border: none;
+        border-radius: 2.5rem;
+        text-decoration: none;
+        background: -webkit-gradient(linear,left top,right top,from(#8bd21f),to(#d8d23e));
+        background: linear-gradient(90deg,#8bd21f,#d8d23e);
+        -webkit-box-shadow: 0.125rem 0.25rem 0.3125rem #f3f6ac;
+        box-shadow: 0.125rem 0.25rem 0.3125rem #f3f6ac;
+        cursor: pointer;
+    .head-content-container
+      position: absolute;
+      top: 8.125rem;
+      text-align: center;
+      .content-title
+        color: #6ba32a;
+        font-size: 4.125rem;
+        font-family: Helvetica;
+        margin-bottom: 2.5rem;
+      .content-container
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 52.375rem;
+        height: 8.75rem;
+        margin-bottom: 5.75rem;
+        font-size: 1.125rem;
+        color: #676767;
+        .last
+          font-weight: 600;
+      .more
+        color: #6ba32a;
+        font-size: 1.125rem;
+        font-weight: bold;
+    .top-bg
+      position: absolute;
+      bottom: -3.375rem;
+      background-image: url("../../assets/top_bg.png");
+      background-size: 100% 100%;
+      width: 51.25rem;
+      height: 38.125rem;
+      
+
+@media screen and (min-width: 920px) and (max-width: 1250px)
+  #part1
+    align-items: flex-start;
+    .part1-container
+      width: 100vw;
+      .head-bar
+        background-color: rgba(248, 248, 255, 0.5);
+        position: relative;
+        flex-wrap: wrap;
+        align-items: stretch;
+        width: 100%;
+        height: 145px;
+        border-bottom: 1px solid #dcdcdc;
+        margin-bottom: 47px;
+        .qylogo
+          order: 1;
+          position: absolute;
+          top: 16px;
+          left: 30px;
+          margin-right: 0;
+        button
+          order: 2;
+          position: absolute;
+          top: 30px;
+          right: 30px;
+        .nav-list
+          order: 3;
+          position: absolute;
+          top: 100px;
+          left: 50%;
+          transform: translate(-50%);
+          width: 70%;
+      .head-content-container
+        top: 177px;
+      .top-bg
+        bottom: -101px;
+        width: 650px;
+        height: 500px;
+
+@media screen and (max-width: 920px)
+  #part1
+    align-items: flex-start;
+    height: 708px;
+    .part1-container
+      width: 100vw;
+      .head-bar
+        background-color: rgba(248, 248, 255, 0.5);
+        position: relative;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        width: 100%;
+        height: 107px;
+        border-bottom: 1px solid #dcdcdc;
+        margin-bottom: 47px;
+        .qylogo
+          order: 1;
+          position: absolute;
+          top: 16px;
+          left: 30px;
+          width: 111px;
+          margin-right: 0;
+        button
+          order: 2;
+          position: absolute;
+          top: 21px;
+          right: 30px;
+          width: 94px;
+          height: 32px;
+          font-size: 12px;
+        .nav-list
+          order: 3;
+          position: absolute;
+          top: 69px;
+          left: 50%;
+          transform: translate(-50%);
+          width: 338px;
+          height: 22px;
+          margin-right: 0;
+          .nav-item
+            font-size: 16px;
+            line-height: 22px;
+      .head-content-container
+        top: 177px;
+        .content-title
+          font-size: 36px;
+          margin-bottom: 22px;
+        .content-container
+          text-align: left;
+          width: 319px;
+          height: 126px;
+          font-size: 12px;
+          margin-bottom: 41px;
+        .more
+          font-size: 16px;
+          text-align: left;
+      .top-bg
+        width: 525px;
+        height: 375px;
+        bottom: -15px;
+        transform: translateX(25vw);
+    
+  
