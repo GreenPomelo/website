@@ -2,6 +2,7 @@
   "parser": "babel-eslint",
   "extends": ["airbnb", "prettier", "prettier/react"],
   "rules": {
+    "linebreak-style": [0 ,"error", "windows"],
     "react/jsx-filename-extension": [
       1,
       {
