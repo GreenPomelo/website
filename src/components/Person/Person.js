@@ -1,13 +1,108 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Person.sass';
 import { People } from './People';
 
 export default function Person() {
   const [people, randomSort] = useState(People);
+  const [offset, setOffset] = useState([
+    [150, 120, 180, 150, 210, 150],
+    [150, 0, 150, 150, 150],
+    [100, 80, 120, 100],
+    [120, 120, 120, 120, 120, 120]
+  ]);
+
+  const initPosCopy = [
+    [150, 120, 180, 150, 210, 150],
+    [150, 0, 150, 150, 150],
+    [100, 80, 120, 100],
+    [120, 120, 120, 120, 120, 120]
+  ];
+
+  useEffect(() => {
+    window.addEventListener('scroll', setPosition);
+    window.addEventListener('load', setPosition);
+    return () => {
+      window.removeEventListener('scroll', setPosition);
+      window.removeEventListener('load', setPosition);
+    };
+  });
+
+  const setPosition = () => {
+    const { scrollTop } = document.documentElement;
+    if (scrollTop >= 1450) {
+      setOffset([
+        offset[0].fill(0),
+        offset[1].fill(0),
+        offset[2].fill(0),
+        offset[3].fill(0)
+      ]);
+    } else if (scrollTop >= 622 && scrollTop < 1450) {
+      setOffset([
+        offset[0].map((num, index) =>
+          Math.max((1 - (scrollTop - 622) / 799) * initPosCopy[0][index], 0)
+        ),
+        offset[1].map((num, index) =>
+          Math.max((1 - (scrollTop - 622) / 799) * initPosCopy[1][index], 0)
+        ),
+        offset[2].map((num, index) =>
+          Math.max((1 - (scrollTop - 622) / 799) * initPosCopy[2][index], 0)
+        ),
+        offset[3].map((num, index) =>
+          Math.max((1 - (scrollTop - 622) / 799) * initPosCopy[3][index], 0)
+        )
+      ]);
+    }
+  };
 
   const handleClick = () => {
-    const afterSort = people.sort(() => (Math.random() > 0.5 ? -1 : 1));
+    const afterSort = people.sort(() => 0.5 - Math.random());
     randomSort([...afterSort]);
+  };
+
+  const setStyle = index => {
+    if (index <= 5) {
+      return {
+        transform: `translateY(${offset[0][index]}px)`
+      };
+    }
+    if (index <= 10) {
+      return {
+        transform: `translateY(${offset[1][index - 6]}px)`
+      };
+    }
+    if (index <= 14) {
+      return {
+        transform: `translateY(${offset[2][index - 11]}px)`
+      };
+    }
+    if (index <= 20) {
+      return {
+        transform: `translateY(${offset[3][index - 15]}px)`
+      };
+    }
+    return {};
+  };
+
+  const setClassName = index => {
+    let className = '';
+    switch (index) {
+      case 0:
+      case 3:
+      case 10:
+      case 11:
+      case 12:
+      case 16:
+      case 20:
+        className = 'item opacity';
+        break;
+      case 7:
+        className = 'item-main';
+        break;
+      default:
+        className = 'item';
+        break;
+    }
+    return className;
   };
 
   return (
@@ -45,22 +140,13 @@ export default function Person() {
             {people.map((person, index) => {
               if (index >= 21) return '';
               const { id, img } = person;
-              let className = '';
-              if (index === 7) className = 'item-main';
-              else if (
-                index === 0 ||
-                index === 3 ||
-                index === 10 ||
-                index === 11 ||
-                index === 12 ||
-                index === 16 ||
-                index === 20
-              ) {
-                className = 'item opacity';
-              } else className = 'item';
 
               return (
-                <div className={className} key={id}>
+                <div
+                  className={setClassName(index)}
+                  key={id}
+                  style={setStyle(index)}
+                >
                   <img src={img} alt="" />
                 </div>
               );
