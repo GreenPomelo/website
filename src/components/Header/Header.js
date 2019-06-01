@@ -8,13 +8,15 @@ export default function Header() {
   );
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', setPosition);
+    window.addEventListener('load', setPosition);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', setPosition);
+      window.removeEventListener('load', setPosition);
     };
   });
 
-  const handleScroll = () => {
+  const setPosition = () => {
     const afterScrollTop = document.documentElement.scrollTop;
     const { clientWidth } = document.body;
 
