@@ -3,7 +3,9 @@ import './Header.sass';
 import QyLogo from '../../assets/qylogo.png';
 
 export default function Header() {
-  const [rightDistance, setDistance] = useState(40);
+  const [rightDistance, setDistance] = useState(
+    document.body.clientWidth <= 920 ? 25 : 40
+  );
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -14,7 +16,7 @@ export default function Header() {
 
   const handleScroll = () => {
     const afterScrollTop = document.documentElement.scrollTop;
-    const clientWidth = document.body.clientWidth;
+    const { clientWidth } = document.body;
 
     //  宽度小于920后图片固定
     if (clientWidth <= 920) {

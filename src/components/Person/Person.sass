@@ -1,0 +1,97 @@
+#part3
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 799px;
+  background-color: #336633;
+  background-image: url("../../assets/bg3left.png"), url("../../assets/bg3right.png");
+  background-repeat: no-repeat, no-repeat;
+  background-size: 535px 524px, 541px 524px;
+  background-position: 0 0, 100% 275px;
+  .part3-container
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1250px;
+    height: 571px;
+    .left-container
+      width: 382px;
+      .title
+        margin-bottom: 35px;
+        font-size: 39px;
+        color: #92d241;
+      .content
+        margin-bottom: 55px;
+        font-size: 18px;
+        font-weight: 100;
+        letter-spacing: 1px;
+        color: #d1d1d1;
+        p
+          padding: 5px 0
+      .people-num
+        margin-bottom: 39px;
+        .num-item
+          display: inline-block;
+          margin-right: 49px;
+          .num
+            font-size: 39px;
+            font-weight: 300;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #92d241;
+            span
+              margin-left: 5px;
+              font-size: 15px;
+          .tag
+            font-size: 15px;
+            color: #6ba32a;
+      .join
+        width: 140px;
+        height: 49px;
+        color: #ffffff;
+        font-size: 14px;
+        background: linear-gradient(90deg,#8bd21e,#efe70e);
+        border-radius: 24px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    .right-container
+      width: 699px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end
+      .photo-wall
+        display: grid;
+        grid-template-columns: 110px [main-start] 110px 110px [main-end] repeat(3, 110px);
+        grid-template-rows: 124px [main-start] 124px 124px [main-end] 124px;
+        grid-column-gap: 8px;
+        grid-row-gap: 9px;
+        width: 100%;
+        height: 520px;
+        margin-bottom: 22px;
+        img
+          width: 100%;
+          height: 100%;
+        .item
+          width: 110px;
+          height: 124px;
+          background-color: #f5f5f5;
+        .opacity
+          opacity: 0.6;
+        .item-main
+          width: 227px;
+          height: 256px;
+          grid-column-start: main-start;
+          grid-column-end: main-end;
+          grid-row-start: main-start;
+          grid-row-end: main-end;
+      .random
+        text-align: right;
+        width: 95px;
+        height: 28px;
+        font-size: 18px;
+        color: #92d241;
+        cursor: pointer
+
+
+      
