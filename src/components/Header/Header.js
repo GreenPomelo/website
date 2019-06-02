@@ -3,16 +3,20 @@ import './Header.sass';
 import QyLogo from '../../assets/qylogo.png';
 
 export default function Header() {
-  const [rightDistance, setDistance] = useState(40);
+  const [rightDistance, setDistance] = useState(
+    document.body.clientWidth <= 920 ? 25 : 40
+  );
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', setPosition);
+    window.addEventListener('load', setPosition);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', setPosition);
+      window.removeEventListener('load', setPosition);
     };
   });
 
-  const handleScroll = () => {
+  const setPosition = () => {
     const afterScrollTop = document.documentElement.scrollTop;
     const { clientWidth } = document.body;
 
