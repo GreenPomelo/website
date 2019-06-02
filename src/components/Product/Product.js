@@ -64,7 +64,7 @@ export default function Product({
             className="product-show-item iphone4"
             src={iphone4}
             alt=""
-            style={{ zIndex: 2, marginTop: `1rem` }}
+            style={{ zIndex: 2, marginTop: `0rem` }}
           />
           <img
             className="product-show-item iphone5"
