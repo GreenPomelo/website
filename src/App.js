@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import Header from './components/Header/Header';
 import Product from './components/Product/Product';
 import Person from './components/Person/Person';
@@ -21,10 +21,23 @@ function App() {
       window.removeEventListener('resize', handleScroll);
     };
   });
+  const rangeHandler = (min, max, raw) => Math.min(max, Math.max(min, raw));
+  const offsetHeader = rangeHandler(0, 798, afterScrollTop);
+  const offsetProduct = rangeHandler(500, 1075, afterScrollTop);
   return (
     <div className="App">
-      <Header distanceObj={{ afterScrollTop, clientWidth }} />
-      <Product distanceObj={{ afterScrollTop, clientWidth }} />
+      {useMemo(
+        () => (
+          <Header distanceObj={{ afterScrollTop, clientWidth }} />
+        ),
+        [offsetHeader, clientWidth]
+      )}
+      {useMemo(
+        () => (
+          <Product distanceObj={{ afterScrollTop, clientWidth }} />
+        ),
+        [offsetProduct, clientWidth]
+      )}
       <Person />
       <Goal />
       <Footer />
