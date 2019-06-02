@@ -27,6 +27,10 @@ import People26 from '../../assets/people/26.jpg';
 import People27 from '../../assets/people/27.jpg';
 import People28 from '../../assets/people/28.jpg';
 import People29 from '../../assets/people/29.jpg';
+import People30 from '../../assets/people/30.jpg';
+import People31 from '../../assets/people/31.jpg';
+import People32 from '../../assets/people/32.jpg';
+import People33 from '../../assets/people/33.jpg';
 
 export const People = [
   {
@@ -144,5 +148,21 @@ export const People = [
   {
     id: 29,
     img: People29
+  },
+  {
+    id: 30,
+    img: People30
+  },
+  {
+    id: 31,
+    img: People31
+  },
+  {
+    id: 32,
+    img: People32
+  },
+  {
+    id: 33,
+    img: People33
   }
 ];
