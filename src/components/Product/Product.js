@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './Product.sass';
 
 import iphone1 from '../../assets/iphone/1.png';
@@ -7,33 +7,23 @@ import iphone3 from '../../assets/iphone/3.png';
 import iphone4 from '../../assets/iphone/4.png';
 import iphone5 from '../../assets/iphone/5.png';
 
-export default function Product() {
-  const [rightDistance2, setDistance2] = useState(14.95);
-  const [rightDistance3, setDistance3] = useState(0);
-  const [rightDistance4, setDistance4] = useState(1);
-  const [rightDistance5, setDistance5] = useState(14.95);
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    window.addEventListener('resize', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleScroll);
-    };
-  });
+export default function Product({
+  distanceObj: { afterScrollTop, clientWidth }
+}) {
+  let rightDistance2 = 14.95;
+  let rightDistance3 = 0;
   const calcScroll = (range, raw) => (range * raw) / 300;
-  const handleScroll = () => {
-    const afterScrollTop = document.documentElement.scrollTop;
-    const { clientWidth } = document.body;
-    if (clientWidth > 920 && afterScrollTop > 650) {
-      const base = Math.max(
-        0,
-        1.5 * calcScroll(10, 300 - (afterScrollTop - 650))
-      );
-      setDistance2(base);
-      setDistance5(base);
-      setDistance3(base > 7.45 ? 2 * (15 - base) : 2 * base);
-    }
-  };
+  if (clientWidth <= 920) {
+    rightDistance3 = -14;
+  } else if (clientWidth > 920 && afterScrollTop > 650) {
+    const base = Math.max(
+      0,
+      1.5 * calcScroll(10, 300 - (afterScrollTop - 650))
+    );
+    rightDistance2 = base;
+    rightDistance3 = base > 7.45 ? 2 * (15 - base) : 2 * base;
+  }
+
   return (
     <div id="part2">
       <div className="product-title">用心,做自己也喜欢的产品</div>
@@ -74,13 +64,13 @@ export default function Product() {
             className="product-show-item iphone4"
             src={iphone4}
             alt=""
-            style={{ zIndex: 2, marginTop: `${rightDistance4}rem` }}
+            style={{ zIndex: 2, marginTop: `1rem` }}
           />
           <img
             className="product-show-item iphone5"
             src={iphone5}
             alt=""
-            style={{ zIndex: 1, marginTop: `${rightDistance5}rem` }}
+            style={{ zIndex: 1, marginTop: `${rightDistance2}rem` }}
           />
         </div>
       </div>
