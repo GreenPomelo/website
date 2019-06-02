@@ -30,27 +30,21 @@ export default function Person() {
   const setPosition = () => {
     const { scrollTop } = document.documentElement;
     if (scrollTop >= 1450) {
-      setOffset([
-        offset[0].fill(0),
-        offset[1].fill(0),
-        offset[2].fill(0),
-        offset[3].fill(0)
-      ]);
+      if (offset.every(item => item.every(num => num === 0))) {
+        return;
+      }
+      setOffset(offset.map(item => item.fill(0)));
     } else if (scrollTop >= 622 && scrollTop < 1450) {
-      setOffset([
-        offset[0].map((num, index) =>
-          Math.max((1 - (scrollTop - 622) / 799) * initPosCopy[0][index], 0)
-        ),
-        offset[1].map((num, index) =>
-          Math.max((1 - (scrollTop - 622) / 799) * initPosCopy[1][index], 0)
-        ),
-        offset[2].map((num, index) =>
-          Math.max((1 - (scrollTop - 622) / 799) * initPosCopy[2][index], 0)
-        ),
-        offset[3].map((num, index) =>
-          Math.max((1 - (scrollTop - 622) / 799) * initPosCopy[3][index], 0)
+      setOffset(
+        offset.map((item, offsetIndex) =>
+          item.map((num, index) =>
+            Math.max(
+              (1 - (scrollTop - 622) / 799) * initPosCopy[offsetIndex][index],
+              0
+            )
+          )
         )
-      ]);
+      );
     }
   };
 
@@ -60,27 +54,22 @@ export default function Person() {
   };
 
   const setStyle = index => {
+    let style = {};
+    const setDetail = (row, innerIndex) => ({
+      transform: `translateY(${offset[row][innerIndex]}px)`
+    });
+
     if (index <= 5) {
-      return {
-        transform: `translateY(${offset[0][index]}px)`
-      };
+      style = setDetail(0, index);
+    } else if (index <= 10) {
+      style = setDetail(1, index - 6);
+    } else if (index <= 14) {
+      style = setDetail(2, index - 11);
+    } else if (index <= 20) {
+      style = setDetail(3, index - 15);
     }
-    if (index <= 10) {
-      return {
-        transform: `translateY(${offset[1][index - 6]}px)`
-      };
-    }
-    if (index <= 14) {
-      return {
-        transform: `translateY(${offset[2][index - 11]}px)`
-      };
-    }
-    if (index <= 20) {
-      return {
-        transform: `translateY(${offset[3][index - 15]}px)`
-      };
-    }
-    return {};
+
+    return style;
   };
 
   const setClassName = index => {
@@ -140,7 +129,6 @@ export default function Person() {
             {people.map((person, index) => {
               if (index >= 21) return '';
               const { id, img } = person;
-
               return (
                 <div
                   className={setClassName(index)}
