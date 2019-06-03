@@ -12,13 +12,12 @@ export default function Product({
 }) {
   let rightDistance2 = 9;
   let rightDistance3 = 0;
-  const calcScroll = (range, raw) => (range * raw) / 300;
   if (clientWidth <= 920) {
     rightDistance3 = -8;
   } else if (clientWidth > 920 && afterScrollTop > 650) {
     const base = Math.max(
       0,
-      1.5 * calcScroll(10, 180 - (afterScrollTop - 650))
+      1.5 * ((10 * (180 - (afterScrollTop - 650))) / 300)
     );
     rightDistance2 = base;
     rightDistance3 = base > 4.5 ? 2 * (9 - base) : 2 * base;

@@ -12,19 +12,44 @@
   background-image: url("../../assets/bg.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  @media screen and (max-width: 1250px)
+    align-items: flex-start;
+  @media screen and (max-width: 920px)
+    height: 44.25rem;
   .part1-container
     display: flex;
     justify-content: center;
     position: relative;
     height: 43.125rem;
+    @media screen and (max-width: 1250px)
+      width: 100vw;
     .head-bar
       display: flex;
       flex-direction: row;
       align-items: center;
-      height: 4.25rem; 
+      height: 4.25rem;
+      @media screen and (max-width: 1250px)
+        background-color: rgba(248, 248, 255, 0.5);
+        position: relative;
+        flex-wrap: wrap;
+        align-items: stretch;
+        width: 100%;
+        height: 9.0625rem;
+        border-bottom: 0.0625rem solid #dcdcdc;
+        margin-bottom: 2.9375rem;
+      @media screen and (max-width: 920px)
+        height: 6.6875rem;
       .qylogo
         width: 12.6875rem;
         margin-right: 18.8125rem;
+        @media screen and (max-width: 1250px)
+          order: 1;
+          position: absolute;
+          top: 1rem;
+          left: 1.875rem;
+          margin-right: 0;
+        @media screen and (max-width: 920px)
+          width: 6.9375rem;
       .nav-list
         display: flex;
         flex-direction: row;
@@ -32,9 +57,24 @@
         width: 33rem;
         height: 1.8125rem;
         margin-right: 2.375rem; 
+        @media screen and (max-width: 1250px)
+          order: 3;
+          position: absolute;
+          top: 6.25rem;
+          left: 50%;
+          transform: translate(-50%);
+          width: 70%;
+        @media screen and (max-width: 920px)
+          top: 4.3125rem;
+          width: 21.125rem;
+          height: 1.375rem;
+          margin-right: 0;
         .nav-item
           line-height: 1.8125rem;
           font-size: 1.3125rem;
+          @media screen and (max-width: 920px)
+            font-size: 1rem;
+            line-height: 1.375rem;
         .first
           font-weight: 600;
           color: #6ba32a;
@@ -56,15 +96,30 @@
         -webkit-box-shadow: 0.125rem 0.25rem 0.3125rem #f3f6ac;
         box-shadow: 0.125rem 0.25rem 0.3125rem #f3f6ac;
         cursor: pointer;
+        @media screen and (max-width: 1250px)
+          order: 2;
+          position: absolute;
+          top: 1.875rem;
+          right: 1.875rem;
+        @media screen and (max-width: 920px)
+          top: 1.3125rem;
+          width: 5.875rem;
+          height: 2rem;
+          font-size: 0.75rem;
     .head-content-container
       position: absolute;
       top: 8.125rem;
       text-align: center;
+      @media screen and (max-width: 1250px)
+        top: 11.0625rem;
       .content-title
         color: #6ba32a;
         font-size: 4.125rem;
         font-family: Helvetica;
         margin-bottom: 2.5rem;
+        @media screen and (max-width: 920px)
+          font-size: 2.25rem;
+          margin-bottom: 1.375rem;
       .content-container
         display: flex;
         flex-direction: column;
@@ -74,12 +129,21 @@
         margin-bottom: 5.75rem;
         font-size: 1.125rem;
         color: #676767;
+        @media screen and (max-width: 920px)
+          text-align: left;
+          width: 19.9375rem;
+          height: 7.875rem;
+          font-size: 0.75rem;
+          margin-bottom: 2.5625rem;
         .last
           font-weight: 600;
       .more
         color: #6ba32a;
         font-size: 1.125rem;
         font-weight: bold;
+        @media screen and (max-width: 920px)
+          font-size: 1rem;
+          text-align: left;
     .top-bg
       position: absolute;
       bottom: -3.375rem;
@@ -87,107 +151,11 @@
       background-size: 100% 100%;
       width: 51.25rem;
       height: 38.125rem;
-      
-
-@media screen and (min-width: 920px) and (max-width: 1250px)
-  #part1
-    align-items: flex-start;
-    .part1-container
-      width: 100vw;
-      .head-bar
-        background-color: rgba(248, 248, 255, 0.5);
-        position: relative;
-        flex-wrap: wrap;
-        align-items: stretch;
-        width: 100%;
-        height: 145px;
-        border-bottom: 1px solid #dcdcdc;
-        margin-bottom: 47px;
-        .qylogo
-          order: 1;
-          position: absolute;
-          top: 16px;
-          left: 30px;
-          margin-right: 0;
-        button
-          order: 2;
-          position: absolute;
-          top: 30px;
-          right: 30px;
-        .nav-list
-          order: 3;
-          position: absolute;
-          top: 100px;
-          left: 50%;
-          transform: translate(-50%);
-          width: 70%;
-      .head-content-container
-        top: 177px;
-      .top-bg
-        bottom: -101px;
-        width: 650px;
-        height: 500px;
-
-@media screen and (max-width: 920px)
-  #part1
-    align-items: flex-start;
-    height: 708px;
-    .part1-container
-      width: 100vw;
-      .head-bar
-        background-color: rgba(248, 248, 255, 0.5);
-        position: relative;
-        flex-wrap: wrap;
-        align-items: flex-start;
-        width: 100%;
-        height: 107px;
-        border-bottom: 1px solid #dcdcdc;
-        margin-bottom: 47px;
-        .qylogo
-          order: 1;
-          position: absolute;
-          top: 16px;
-          left: 30px;
-          width: 111px;
-          margin-right: 0;
-        button
-          order: 2;
-          position: absolute;
-          top: 21px;
-          right: 30px;
-          width: 94px;
-          height: 32px;
-          font-size: 12px;
-        .nav-list
-          order: 3;
-          position: absolute;
-          top: 69px;
-          left: 50%;
-          transform: translate(-50%);
-          width: 338px;
-          height: 22px;
-          margin-right: 0;
-          .nav-item
-            font-size: 16px;
-            line-height: 22px;
-      .head-content-container
-        top: 177px;
-        .content-title
-          font-size: 36px;
-          margin-bottom: 22px;
-        .content-container
-          text-align: left;
-          width: 319px;
-          height: 126px;
-          font-size: 12px;
-          margin-bottom: 41px;
-        .more
-          font-size: 16px;
-          text-align: left;
-      .top-bg
-        width: 525px;
-        height: 375px;
-        bottom: -15px;
-        transform: translateX(25vw);
-    
-  
+      @media screen and (max-width: 1250px)
+        bottom: -6.3125rem;
+        width: 40.625rem;
+        height: 31.25rem;
+      @media screen and (max-width: 920px)
+        width: 32.8125rem;
+        height: 23.4375rem;
+        bottom: -0.9375rem;
