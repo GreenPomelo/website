@@ -67,7 +67,7 @@ export default function Product({
             style={{ zIndex: 2 }}
           />
           <img
-            className="product-show-item"
+            className="product-show-item iphone5"
             src={iphone5}
             alt=""
             style={{ zIndex: 1, marginTop: `${rightDistance2}rem` }}
