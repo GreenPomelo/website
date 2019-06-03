@@ -1,3 +1,100 @@
 #part2
   width: 100vw;
-  height: 799px;
+  height: 49.875rem;
+  background-image: url("../../assets/bg4.png")
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100vh;
+  @media screen and (max-width: 920px)
+    height: 66rem;
+  .product-title
+    width: 28rem;
+    height: 3rem;
+    font-family: PingFangSC-Regular;
+    font-size: 2rem;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0rem;
+    color: #6ba32a;
+    margin-top: 5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    @media screen and (max-width: 920px)
+      width: 18rem;
+      height: 2rem;
+      font-family: PingFangSC-Regular;
+      font-size: 1.6rem;
+      font-weight: normal;
+      font-stretch: normal;
+      letter-spacing: 0rem;
+      color: #6ba32a;
+  .product-desc
+    width: 100vw;
+    height: 7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media screen and (max-width: 920px)
+      margin-top: 1rem
+    .product-desc-item
+      width: 52rem;
+      height: 7rem;
+      font-family: Helvetica;
+      font-size: 1rem;
+      font-weight: normal;
+      font-stretch: normal;
+      line-height: 2rem;
+      letter-spacing: 0rem;
+      color: #676767;
+      text-align: center;
+      @media screen and (max-width: 920px)
+        width: 20rem;
+        height: 8rem;
+        font-family: PingFangSC-Regular;
+        font-size: 1rem;
+        font-weight: normal;
+        font-stretch: normal;
+        line-height: 1.5rem;
+        letter-spacing: 0rem;
+        color: #676767;
+    .product-desc-more
+      margin-top: 2rem;
+      width: 11rem;
+      height: 2rem;
+      font-family: PingFangSC-Semibold;
+      font-size: 1rem;
+      font-weight: bold;
+      font-stretch: normal;
+      line-height: 2rem;
+      letter-spacing: 0rem;
+      color: #6ba32a;
+      margin-bottom: 4rem;
+      cursor: pointer;
+      @media screen and (max-width: 920px)
+        margin-bottom: 1rem;
+    .product-show
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: translateY(0.3rem);
+      @media screen and (max-width: 920px)
+        width: 23rem;
+        flex-wrap: wrap;
+        transform: translateY(-4rem)
+      .product-show-item
+        width: 14rem;
+        height: 28rem;
+        margin-right: -3rem;
+        @media screen and (max-width: 920px)
+          width: 11rem;
+          height: 22rem;
+          margin-right: 0.5rem;
+      @media screen and (max-width: 920px)
+        .iphone4
+          margin-top: 1rem;
+        .iphone5
+          display: none;
+        

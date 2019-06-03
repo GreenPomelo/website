@@ -1,45 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './Header.sass';
 import QyLogo from '../../assets/qylogo.png';
 
-export default function Header() {
-  const [rightDistance, setDistance] = useState(
-    document.body.clientWidth <= 920 ? 25 : 40
-  );
-
-  useEffect(() => {
-    window.addEventListener('scroll', setPosition);
-    window.addEventListener('load', setPosition);
-    return () => {
-      window.removeEventListener('scroll', setPosition);
-      window.removeEventListener('load', setPosition);
-    };
-  });
-
-  const setPosition = () => {
-    const afterScrollTop = document.documentElement.scrollTop;
-    const { clientWidth } = document.body;
-
-    //  宽度小于920后图片固定
-    if (clientWidth <= 920) {
-      if (rightDistance === 25) return;
-      setDistance(25);
-      return;
-    }
-    //  超过第一部分后直接将图片居中
-    if (afterScrollTop >= 798) {
-      if (rightDistance === 0) return;
-      setDistance(0);
-      return;
-    }
-    //  到达顶部直接将图片设置到右边
-    if (afterScrollTop === 0) {
-      setDistance(40);
-      return;
-    }
-
-    setDistance(Math.max((1 - afterScrollTop / 798) * 40, 0));
-  };
+export default function Header({
+  distanceObj: { afterScrollTop, clientWidth }
+}) {
+  let rightDistance;
+  if (clientWidth <= 920) {
+    rightDistance = 25;
+  } else if (afterScrollTop >= 798) {
+    rightDistance = 0;
+  } else if (afterScrollTop === 0) {
+    rightDistance = 40;
+  } else {
+    rightDistance = Math.max((1 - afterScrollTop / 798) * 40, 0);
+  }
 
   return (
     <div id="part1">
