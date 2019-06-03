@@ -1,0 +1,147 @@
+#part3
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 100vw;
+  height: 49.9375rem;
+  background-color: #336633;
+  background-image: url("../../assets/bg3left.png"), url("../../assets/bg3right.png");
+  background-repeat: no-repeat, no-repeat;
+  background-size: 33.4375rem 32.75rem, 33.8125rem 32.75rem;
+  background-position: 0 0, 100% 17.1875rem;
+  @media screen and (max-width: 920px)
+    height: 59.25rem;
+    background-size: 16.875rem 22.5625rem, 19.0625rem 22.5625rem;
+    background-position: 0 0, 100% 36.25rem;
+  .part3-container
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 78.125rem;
+    height: 35.6875rem;
+    @media screen and (max-width: 1280px)
+      justify-content: space-around;
+    @media screen and (max-width: 920px)
+      position: relative;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      width: 80vw;
+      height: 55rem;
+    .left-container
+      width: 23.875rem;
+      @media screen and (max-width: 1160px)
+        width: 17.5rem;
+      @media screen and (max-width: 920px)
+        width: 100%;
+      .title
+        margin-bottom: 2.1875rem;
+        font-size: 2.4375rem;
+        color: #92d241;
+        @media screen and (max-width: 920px)
+          font-size: 1.625rem;
+          margin-bottom: 1.3125rem;
+      .content
+        margin-bottom: 3.4375rem;
+        font-size: 1.125rem;
+        font-weight: 100;
+        letter-spacing: 0.0625rem;
+        color: #d1d1d1;
+        @media screen and (max-width: 920px)
+          font-size: 0.875rem;
+          margin-bottom: 1.625rem;
+        p
+          padding: 0.3125rem 0
+      .people-num
+        margin-bottom: 2.4375rem;
+        @media screen and (max-width: 920px)
+          margin-bottom: 1.9375rem;
+        .num-item
+          display: inline-block;
+          margin-right: 3.0625rem;
+          .num
+            font-size: 2.4375rem;
+            font-weight: 300;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #92d241;
+            span
+              margin-left: 0.3125rem;
+              font-size: 0.9375rem;
+          .tag
+            font-size: 0.9375rem;
+            color: #6ba32a;
+      .join
+        width: 8.75rem;
+        height: 3.0625rem;
+        color: #ffffff;
+        font-size: 0.875rem;
+        background: linear-gradient(90deg,#8bd21e,#efe70e);
+        border-radius: 1.5rem;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        @media screen and (max-width: 920px)
+          position: absolute;
+          bottom: -0.9375rem;
+          left: 50%;
+          transform: translateX(-50%);
+    .right-container
+      width: 43.6875rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      @media screen and (max-width: 1160px)
+        width: 28.75rem;
+      .photo-wall
+        display: grid;
+        overflow: hidden;
+        grid-template-columns: 6.875rem [main-start] 6.875rem 6.875rem [main-end] repeat(3, 6.875rem);
+        grid-template-rows: 7.75rem [main-start] 7.75rem 7.75rem [main-end] 7.75rem;
+        grid-column-gap: 0.5rem;
+        grid-row-gap: 0.5625rem;
+        width: 100%;
+        height: 32.5rem;
+        margin-bottom: 1.375rem;
+        @media screen and (max-width: 1160px)
+          grid-template-columns: [main-start] 6.875rem 6.875rem [main-end] repeat(2, 6.875rem);
+          grid-template-rows: 7.8125rem [main-start] 7.8125rem 7.8125rem [main-end] 7.8125rem;
+          height: 32.9375rem;
+        @media screen and (max-width: 920px)
+          grid-template-columns: [main-start] 5.0625rem 5.0625rem [main-end] repeat(2, 5.0625rem);
+          grid-template-rows: 5.75rem [main-start] 5.75rem 5.75rem [main-end] 5.75rem;
+          grid-gap: 6px 6px;
+          width: 21.4375rem;
+          height: 24.125rem;
+          margin: 0 auto 1rem;
+        img
+          width: 100%;
+          height: 100%;
+        .item
+          width: 100%;
+          height: 100%;
+          background-color: #f5f5f5;
+          z-index: 10;
+        .opacity
+          opacity: 0.6;
+        .item-main
+          width: 100%;
+          height: 100%;
+          grid-column-start: main-start;
+          grid-column-end: main-end;
+          grid-row-start: main-start;
+          grid-row-end: main-end;
+          z-index: 1;
+      .random
+        cursor: pointer;
+        color: #92d241;
+        text-align: right;
+        width: 5.9375rem;
+        height: 1.75rem;
+        font-size: 1.125rem;
+        @media screen and (max-width: 920px)
+          margin: 0 auto;
+        
+
+
+      
