@@ -6,11 +6,22 @@ import orange from '../../assets/orange.png';
 import x from '../../assets/x.png';
 import q from '../../assets/q.png';
 
-export default function Goal() {
+export default function Goal({ distanceObj: { afterScrollTop } }) {
+  const distance = ((afterScrollTop - 1700) / 600) * 20.5;
   return (
     <div id="part4">
-      <img className="mascot x" src={x} alt="" />
-      <img className="mascot q" src={q} alt="" />
+      <img
+        className="mascot"
+        style={{ transform: `translate(-40vw,-${distance}rem)` }}
+        src={x}
+        alt=""
+      />
+      <img
+        className="mascot"
+        style={{ transform: `translate(40vw,-${distance}rem)` }}
+        src={q}
+        alt=""
+      />
       <div className="goal-title">取悦自己,服务他人</div>
       <div className="goal-desc">
         <div className="goal-desc-item">
