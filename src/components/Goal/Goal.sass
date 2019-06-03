@@ -1,0 +1,118 @@
+#part4
+  width: 100vw;
+  height: 58rem;
+  background-image: url("../../assets/bg4.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 3rem;
+  .mascot
+    width: 18rem;
+    height: 29rem;
+    position: absolute;
+    @media screen and (max-width: 920px)
+      display: none;
+  .x
+    transform: translate(-40vw,-18rem);
+  .q
+    transform: translate(40vw,-18rem);
+  .goal-title
+    width: 20rem;
+    height: 3rem;
+    font-family: PingFangSC-Regular;
+    font-size: 2rem;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0rem;
+    color: #6ba32a;
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+    @media screen and (max-width: 920px)
+      width: 18rem;
+      height: 2rem;
+      font-family: PingFangSC-Regular;
+      font-size: 2rem;
+      font-weight: normal;
+      font-stretch: normal;
+      letter-spacing: 0rem;
+      color: #6ba32a;
+  .goal-desc
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @media screen and (max-width: 920px)
+      margin-bottom: 1rem;
+    .goal-desc-item
+      width: 52rem;
+      font-family: PingFangSC-Regular;
+      font-size: 1rem;
+      font-weight: normal;
+      font-stretch: normal;
+      line-height: 2rem;
+      letter-spacing: 0rem;
+      color: #676767;
+      text-align: center;
+      @media screen and (max-width: 920px)
+        width: 19rem;
+        font-family: PingFangSC-Regular;
+        font-size: 1rem;
+        font-weight: normal;
+        font-stretch: normal;
+        line-height: 1.6rem;
+        letter-spacing: 0rem;
+        color: #676767;
+  .goal-more
+    width: 11rem;
+    height: 2rem;
+    font-family: PingFangSC-Semibold;
+    font-size: 1rem;
+    font-weight: bold;
+    font-stretch: normal;
+    line-height: 2rem;
+    letter-spacing: 0rem;
+    color: #6ba32a;
+    margin-bottom: 4rem;
+    @media screen and (max-width: 920px)
+      margin-bottom: 1rem;
+  .goal-card-set
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 70rem;
+    @media screen and (max-width: 920px)
+      flex-direction: column;
+    .goal-card
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      width: 22rem;
+      height: 15rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      @media screen and (max-width: 920px)
+        width: 80vw;
+      .goal-card-text
+        width: 80vw;
+        height: 2rem;
+        font-family: PingFangSC-Regular;
+        font-size: 2rem;
+        font-weight: normal;
+        font-stretch: normal;
+        letter-spacing: 0rem;
+        color: #ffffff;
+        transform: translateX(1.2rem);
+      .goal-card-sub-text
+        margin-top: 1rem;
+        width: 5rem;
+        height: 2rem;
+        font-family: PingFangSC-Semibold;
+        font-size: 1rem;
+        font-weight: bold;
+        font-stretch: normal;
+        letter-spacing: 0rem;
+        color: rgba(255, 255, 255, 0.5);
+        transform: translateX(1.2rem);
