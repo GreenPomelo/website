@@ -10,7 +10,12 @@ function App() {
   const [clientWidth, setClientWidth] = useState(0);
   useEffect(() => {
     const handleScroll = () => {
-      setAfterScrollTop(document.documentElement.scrollTop);
+      const top = [
+        window.scrollY,
+        document.documentElement.scrollTop,
+        window.pageYOffset
+      ].find(item => item);
+      setAfterScrollTop(top);
       setClientWidth(document.body.clientWidth);
     };
 
