@@ -14,10 +14,10 @@ export default function Product({
   let rightDistance3 = 0;
   if (clientWidth <= 920) {
     rightDistance3 = -8;
-  } else if (clientWidth > 920 && afterScrollTop > 650) {
+  } else if (clientWidth > 920 && afterScrollTop > 500) {
     const base = Math.max(
       0,
-      1.5 * ((10 * (180 - (afterScrollTop - 650))) / 300)
+      1.5 * ((10 * (180 - (afterScrollTop - 500))) / 300)
     );
     rightDistance2 = base;
     rightDistance3 = base > 4.5 ? 2 * (9 - base) : 2 * base;
@@ -48,7 +48,7 @@ export default function Product({
             style={{ zIndex: 5 }}
           />
           <img
-            className="product-show-item"
+            className="product-show-item iphone2"
             style={{ zIndex: 4, marginTop: `${rightDistance2}rem` }}
             src={iphone2}
             alt=""

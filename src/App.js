@@ -29,13 +29,15 @@ function App() {
     <div className="App">
       {useMemo(
         () => (
-          <Header distanceObj={{ afterScrollTop, clientWidth }} />
+          <Header distanceObj={{ afterScrollTop: offsetHeader, clientWidth }} />
         ),
         [offsetHeader, clientWidth]
       )}
       {useMemo(
         () => (
-          <Product distanceObj={{ afterScrollTop, clientWidth }} />
+          <Product
+            distanceObj={{ afterScrollTop: offsetProduct, clientWidth }}
+          />
         ),
         [offsetProduct, clientWidth]
       )}
