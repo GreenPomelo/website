@@ -1,52 +1,38 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './Person.sass';
 import { People } from './People';
 
-export default function Person() {
+export default function Person({
+  distanceObj: { afterScrollTop, clientWidth }
+}) {
   const [people, randomSort] = useState(People);
-  const [offset, setOffset] = useState([
+  let position = [
     [150, 120, 180, 150, 210, 150],
-    [150, 0, 150, 150, 150],
-    [100, 80, 120, 100],
-    [120, 120, 120, 120, 120, 120]
-  ]);
-
-  const initPosCopy = [
-    [150, 120, 180, 150, 210, 150],
-    [150, 0, 150, 150, 150],
-    [100, 80, 120, 100],
-    [120, 120, 120, 120, 120, 120]
+    [160, 100, 160, 220, 160],
+    [170, 170, 230, 170],
+    [180, 150, 210, 180, 240, 180]
   ];
 
-  useEffect(() => {
-    window.addEventListener('scroll', setPosition);
-    window.addEventListener('load', setPosition);
-    return () => {
-      window.removeEventListener('scroll', setPosition);
-      window.removeEventListener('load', setPosition);
-    };
-  });
+  const positionCopy = [
+    [150, 120, 180, 150, 210, 150],
+    [160, 100, 160, 220, 160],
+    [170, 170, 230, 170],
+    [180, 150, 210, 180, 240, 180]
+  ];
 
-  const setPosition = () => {
-    const { scrollTop } = document.documentElement;
-    if (scrollTop >= 1450) {
-      if (offset.every(item => item.every(num => num === 0))) {
-        return;
-      }
-      setOffset(offset.map(item => item.fill(0)));
-    } else if (scrollTop >= 622 && scrollTop < 1450) {
-      setOffset(
-        offset.map((item, offsetIndex) =>
-          item.map((num, index) =>
-            Math.max(
-              (1 - (scrollTop - 622) / 799) * initPosCopy[offsetIndex][index],
-              0
-            )
-          )
+  if (clientWidth <= 920) {
+    position = position.map(item => item.fill(0));
+  } else if (clientWidth > 920 && afterScrollTop >= 622) {
+    position = position.map((item, positionIndex) =>
+      item.map((num, innerIndex) =>
+        Math.max(
+          (1 - (afterScrollTop - 622) / 799) *
+            positionCopy[positionIndex][innerIndex],
+          0
         )
-      );
-    }
-  };
+      )
+    );
+  }
 
   const handleClick = () => {
     const afterSort = people.sort(() => 0.5 - Math.random());
@@ -56,7 +42,7 @@ export default function Person() {
   const setStyle = index => {
     let style = {};
     const setDetail = (row, innerIndex) => ({
-      transform: `translateY(${offset[row][innerIndex]}px)`
+      transform: `translateY(${position[row][innerIndex]}px)`
     });
 
     if (index <= 5) {

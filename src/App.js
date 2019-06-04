@@ -24,6 +24,7 @@ function App() {
   const rangeHandler = (min, max, raw) => Math.min(max, Math.max(min, raw));
   const offsetHeader = rangeHandler(0, 798, afterScrollTop);
   const offsetProduct = rangeHandler(500, 1075, afterScrollTop);
+  const offsetPerson = rangeHandler(622, 1450, afterScrollTop);
   return (
     <div className="App">
       {useMemo(
@@ -40,7 +41,12 @@ function App() {
         ),
         [offsetProduct, clientWidth]
       )}
-      <Person />
+      {useMemo(
+        () => (
+          <Person distanceObj={{ afterScrollTop: offsetPerson, clientWidth }} />
+        ),
+        [offsetPerson, clientWidth]
+      )}
       <Goal />
       <Footer />
     </div>
