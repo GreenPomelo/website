@@ -23,10 +23,11 @@ export default function Person({
   if (clientWidth <= 920) {
     position = position.map(item => item.fill(0));
   } else if (clientWidth > 920 && afterScrollTop >= 622) {
+    const startSetting = clientWidth > 1024 ? 622 : 420;
     position = position.map((item, positionIndex) =>
       item.map((num, innerIndex) =>
         Math.max(
-          (1 - (afterScrollTop - 622) / 799) *
+          (1 - (afterScrollTop - startSetting) / 799) *
             positionCopy[positionIndex][innerIndex],
           0
         )
