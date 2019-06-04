@@ -35,8 +35,12 @@ export default function Footer() {
                 </div>
                 <div className="developer info">
                   <li className="title">开发者</li>
-                  <li className="item">开源仓库</li>
-                  <li className="item">青柚认证系统</li>
+                  <li className="item">
+                    <a href="https://github.com/GreenPomelo">开源仓库</a>
+                  </li>
+                  <li className="item">
+                    <a href="https://github.com/GreenPomelo">青柚认证系统</a>
+                  </li>
                 </div>
                 <div className="user info">
                   <li className="title">用户</li>
