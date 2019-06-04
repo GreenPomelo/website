@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './Person.sass';
 import { People } from './People';
 
-export default function Person() {
+export default function Person({ distanceObj: { afterScrollTop } }) {
   const [people, randomSort] = useState(People);
-  const [offset, setOffset] = useState([
+  let offset = [
     [150, 120, 180, 150, 210, 150],
     [150, 0, 150, 150, 150],
     [100, 80, 120, 100],
     [120, 120, 120, 120, 120, 120]
-  ]);
+  ];
 
   const initPosCopy = [
     [150, 120, 180, 150, 210, 150],
@@ -18,35 +18,20 @@ export default function Person() {
     [120, 120, 120, 120, 120, 120]
   ];
 
-  useEffect(() => {
-    window.addEventListener('scroll', setPosition);
-    window.addEventListener('load', setPosition);
-    return () => {
-      window.removeEventListener('scroll', setPosition);
-      window.removeEventListener('load', setPosition);
-    };
-  });
-
-  const setPosition = () => {
-    const { scrollTop } = document.documentElement;
-    if (scrollTop >= 1450) {
-      if (offset.every(item => item.every(num => num === 0))) {
-        return;
-      }
-      setOffset(offset.map(item => item.fill(0)));
-    } else if (scrollTop >= 622 && scrollTop < 1450) {
-      setOffset(
-        offset.map((item, offsetIndex) =>
-          item.map((num, index) =>
-            Math.max(
-              (1 - (scrollTop - 622) / 799) * initPosCopy[offsetIndex][index],
-              0
-            )
-          )
-        )
-      );
+  if (afterScrollTop >= 1450) {
+    if (!offset.every(item => item.every(num => num === 0))) {
+      offset = offset.map(item => item.fill(0));
     }
-  };
+  } else if (afterScrollTop >= 622 && afterScrollTop < 1450) {
+    offset = offset.map((item, offsetIndex) =>
+      item.map((num, index) =>
+        Math.max(
+          (1 - (afterScrollTop - 622) / 799) * initPosCopy[offsetIndex][index],
+          0
+        )
+      )
+    );
+  }
 
   const handleClick = () => {
     const afterSort = people.sort(() => 0.5 - Math.random());
