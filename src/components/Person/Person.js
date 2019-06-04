@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import './Person.sass';
 import { People } from './People';
+import n1 from '../../assets/word/n1.png';
+import n2 from '../../assets/word/n2.png';
+import t3 from '../../assets/word/t3.png';
 
 export default function Person({
   distanceObj: { afterScrollTop, clientWidth }
@@ -23,10 +26,11 @@ export default function Person({
   if (clientWidth <= 920) {
     position = position.map(item => item.fill(0));
   } else if (clientWidth > 920 && afterScrollTop >= 622) {
+    const startSetting = clientWidth > 1024 ? 622 : 420;
     position = position.map((item, positionIndex) =>
       item.map((num, innerIndex) =>
         Math.max(
-          (1 - (afterScrollTop - 622) / 799) *
+          (1 - (afterScrollTop - startSetting) / 799) *
             positionCopy[positionIndex][innerIndex],
           0
         )
@@ -84,7 +88,9 @@ export default function Person({
     <div id="part3">
       <div className="part3-container">
         <div className="left-container">
-          <div className="title">成长是一场团战</div>
+          <div className="title">
+            <img src={t3} alt="" />
+          </div>
           <div className="content">
             <p>
               从一开始的几人团队到现在四十多位同学的工作室，青柚工作室吸引并包容越来越多志同道合的朋友们加入。
@@ -97,13 +103,13 @@ export default function Person({
           <div className="people-num">
             <div className="num-item">
               <div className="num">
-                50<span>人</span>
+                <img src={n1} alt="" />
               </div>
               <div className="tag">工作室成员数</div>
             </div>
             <div className="num-item">
               <div className="num">
-                18<span>人</span>
+                <img src={n2} alt="" />
               </div>
               <div className="tag">毕业成员数</div>
             </div>
