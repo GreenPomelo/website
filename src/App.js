@@ -43,7 +43,7 @@ function App() {
       )}
       {useMemo(
         () => (
-          <Person distanceObj={{ afterScrollTop, clientWidth }} />
+          <Person distanceObj={{ afterScrollTop: offsetPerson, clientWidth }} />
         ),
         [offsetPerson, clientWidth]
       )}
