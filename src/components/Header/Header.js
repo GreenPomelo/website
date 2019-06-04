@@ -8,7 +8,8 @@ export default function Header({
 }) {
   let rightDistance;
   if (clientWidth <= 920) {
-    rightDistance = 25;
+    // rightDistance = 25;
+    rightDistance = 40;
   } else if (afterScrollTop >= 798) {
     rightDistance = 0;
   } else if (afterScrollTop === 0) {
