@@ -1,6 +1,7 @@
 import React from 'react';
 import './Product.sass';
 
+import t2 from '../../assets/word/t2.png';
 import iphone1 from '../../assets/iphone/1.png';
 import iphone2 from '../../assets/iphone/2.png';
 import iphone3 from '../../assets/iphone/3.png';
@@ -25,7 +26,9 @@ export default function Product({
 
   return (
     <div id="part2">
-      <div className="product-title">用心,做自己也喜欢的产品</div>
+      <div className="product-title">
+        <img src={t2} alt="" />
+      </div>
       <div className="product-desc">
         <div className="product-desc-item">
           南邮小程序、校谈、期末报告单、社团招新系统、你头像真棒等等，
