@@ -12,13 +12,13 @@ export default function Goal({ distanceObj: { afterScrollTop } }) {
     <div id="part4">
       <img
         className="mascot"
-        style={{ transform: `translate(-40vw,-${distance}rem)` }}
+        style={{ transform: `translate(-35vw,-${distance}rem)` }}
         src={x}
         alt=""
       />
       <img
         className="mascot"
-        style={{ transform: `translate(40vw,-${distance}rem)` }}
+        style={{ transform: `translate(35vw,-${distance}rem)` }}
         src={q}
         alt=""
       />
