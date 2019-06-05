@@ -8,21 +8,23 @@
   align-items: center;
   overflow: hidden;
   width: 100vw;
-  height: 49.875rem;
+  height: 100vh;
   background-image: url("../../assets/bg.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   @media screen and (max-width: 1250px)
     align-items: flex-start;
+    height: 49.9375rem;
   @media screen and (max-width: 920px)
     height: 44.25rem;
   .part1-container
     display: flex;
     justify-content: center;
     position: relative;
-    height: 43.125rem;
+    height: 100vh;
     @media screen and (max-width: 1250px)
       width: 100vw;
+      height: 100%;
     .head-bar
       display: flex;
       flex-direction: row;
@@ -108,17 +110,22 @@
           font-size: 0.75rem;
     .head-content-container
       position: absolute;
-      top: 8.125rem;
+      top: 12rem;
       text-align: center;
       @media screen and (max-width: 1250px)
-        top: 11.0625rem;
+        top: 14rem;
+      @media screen and (max-width: 920px)
+        top: 10rem;
       .content-title
-        color: #6ba32a;
-        font-size: 4.125rem;
-        font-family: Helvetica;
-        margin-bottom: 2.5rem;
+        width: 550px;
+        height: 89px
+        margin: 0 auto 40px;
+        img
+          width: 100%;
+          height: 100%;
         @media screen and (max-width: 920px)
-          font-size: 2.25rem;
+          width: 300px;
+          height: 49px;
           margin-bottom: 1.375rem;
       .content-container
         display: flex;
@@ -146,16 +153,15 @@
           text-align: left;
     .top-bg
       position: absolute;
-      bottom: -3.375rem;
+      bottom: 1rem;
       background-image: url("../../assets/top_bg.png");
       background-size: 100% 100%;
       width: 51.25rem;
       height: 38.125rem;
       @media screen and (max-width: 1250px)
-        bottom: -6.3125rem;
         width: 40.625rem;
         height: 31.25rem;
       @media screen and (max-width: 920px)
         width: 32.8125rem;
         height: 23.4375rem;
-        bottom: -0.9375rem;
+        bottom: 0rem;

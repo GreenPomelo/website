@@ -1,6 +1,7 @@
 import React from 'react';
 import './Header.sass';
 import QyLogo from '../../assets/qylogo.png';
+import t1 from '../../assets/word/t1.png';
 
 export default function Header({
   distanceObj: { afterScrollTop, clientWidth }
@@ -31,7 +32,9 @@ export default function Header({
           <button>用户服务</button>
         </div>
         <div className="head-content-container">
-          <div className="content-title">用爱发电,创造可能</div>
+          <div className="content-title">
+            <img src={t1} alt="" />
+          </div>
           <div className="content-container">
             <p className="head-content">
               2017年春天，南邮小程序上显示出第一句"Hello, world"，

@@ -35,14 +35,18 @@
       @media screen and (max-width: 1160px)
         width: 17.5rem;
       @media screen and (max-width: 920px)
-        width: 100%;
+        width: 21.4375rem;
       .title
+        width: 17.125rem;
+        height: 2.5rem;
         margin-bottom: 2.1875rem;
-        font-size: 2.4375rem;
-        color: #92d241;
+        img
+          width: 100%;
+          height: 100%;
         @media screen and (max-width: 920px)
-          font-size: 1.625rem;
-          margin-bottom: 1.3125rem;
+          width: 11.4375rem;
+          height: 1.875rem;
+          margin: 0.625rem 0 1.3125rem 0;
       .content
         margin-bottom: 3.4375rem;
         font-size: 1.125rem;
@@ -62,14 +66,16 @@
           display: inline-block;
           margin-right: 3.0625rem;
           .num
-            font-size: 2.4375rem;
-            font-weight: 300;
-            font-family: Arial, Helvetica, sans-serif;
-            color: #92d241;
-            span
-              margin-left: 0.3125rem;
-              font-size: 0.9375rem;
+            width: 4.6875rem;
+            height: 2.75rem;
+            @media screen and (max-width: 920px)
+              width: 3.75rem;
+              height: 2.25rem;
+            img
+              width: 100%;
+              height: 100%;
           .tag
+            margin-top: 0.5rem;
             font-size: 0.9375rem;
             color: #6ba32a;
       .join
@@ -111,7 +117,7 @@
         @media screen and (max-width: 920px)
           grid-template-columns: [main-start] 5.0625rem 5.0625rem [main-end] repeat(2, 5.0625rem);
           grid-template-rows: 5.75rem [main-start] 5.75rem 5.75rem [main-end] 5.75rem;
-          grid-gap: 6px 6px;
+          grid-gap: 0.375rem 0.375rem;
           width: 21.4375rem;
           height: 24.125rem;
           margin: 0 auto 1rem;
@@ -123,8 +129,21 @@
           height: 100%;
           background-color: #f5f5f5;
           z-index: 10;
+          opacity: 1;
+          animation: fade-in__noopacity 1s ease-out;
+          @keyframes fade-in__noopacity
+            from
+              opacity: 0;
+            to
+              opacity: 1;
         .opacity
           opacity: 0.6;
+          animation: fade-in__opacity 0.6s ease-out;
+          @keyframes fade-in__opacity
+            from
+              opacity: 0;
+            to
+              opacity: 0.6;
         .item-main
           width: 100%;
           height: 100%;

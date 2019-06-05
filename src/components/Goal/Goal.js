@@ -5,9 +5,14 @@ import pink from '../../assets/pink.png';
 import orange from '../../assets/orange.png';
 import x from '../../assets/x.png';
 import q from '../../assets/q.png';
+import git from '../../assets/git.png';
+import w4 from '../../assets/word/w4.png';
 
-export default function Goal({ distanceObj: { afterScrollTop } }) {
-  const distance = ((afterScrollTop - 1700) / 600) * 20.5;
+export default function Goal({ distanceObj: { afterScrollTop, clientWidth } }) {
+  let distance = 0;
+  if (clientWidth > 920) {
+    distance = ((afterScrollTop - 1700) / 600) * 20.5;
+  }
   return (
     <div id="part4">
       <img
@@ -67,6 +72,21 @@ export default function Goal({ distanceObj: { afterScrollTop } }) {
           <div className="goal-card-text">实践促成进步</div>
           <div className="goal-card-sub-text">项目目的</div>
         </div>
+      </div>
+      <div className="goal-divide-line" />
+      <div className="goal-open-source">
+        <div className="goal-open-source-text-div">
+          <img className="goal-open-source-text-div-title" src={w4} alt="" />
+          <div className="goal-open-source-text-div-contents">
+            <div className="goal-open-source-text-div-content1">
+              开放和共享是一种学习。
+            </div>
+            <div className="goal-open-source-text-div-content2">
+              访问青柚的 GitHub 仓库 >
+            </div>
+          </div>
+        </div>
+        <img className="goal-open-source-git" src={git} alt="" />
       </div>
     </div>
   );

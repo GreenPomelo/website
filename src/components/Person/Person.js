@@ -1,52 +1,42 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './Person.sass';
 import { People } from './People';
+import n1 from '../../assets/word/n1.png';
+import n2 from '../../assets/word/n2.png';
+import t3 from '../../assets/word/t3.png';
 
-export default function Person() {
+export default function Person({
+  distanceObj: { afterScrollTop, clientWidth }
+}) {
   const [people, randomSort] = useState(People);
-  const [offset, setOffset] = useState([
+  let position = [
     [150, 120, 180, 150, 210, 150],
-    [150, 0, 150, 150, 150],
-    [100, 80, 120, 100],
-    [120, 120, 120, 120, 120, 120]
-  ]);
-
-  const initPosCopy = [
-    [150, 120, 180, 150, 210, 150],
-    [150, 0, 150, 150, 150],
-    [100, 80, 120, 100],
-    [120, 120, 120, 120, 120, 120]
+    [160, 100, 160, 220, 160],
+    [170, 170, 230, 170],
+    [180, 150, 210, 180, 240, 180]
   ];
 
-  useEffect(() => {
-    window.addEventListener('scroll', setPosition);
-    window.addEventListener('load', setPosition);
-    return () => {
-      window.removeEventListener('scroll', setPosition);
-      window.removeEventListener('load', setPosition);
-    };
-  });
+  const positionCopy = [
+    [150, 120, 180, 150, 210, 150],
+    [160, 100, 160, 220, 160],
+    [170, 170, 230, 170],
+    [180, 150, 210, 180, 240, 180]
+  ];
 
-  const setPosition = () => {
-    const { scrollTop } = document.documentElement;
-    if (scrollTop >= 1450) {
-      if (offset.every(item => item.every(num => num === 0))) {
-        return;
-      }
-      setOffset(offset.map(item => item.fill(0)));
-    } else if (scrollTop >= 622 && scrollTop < 1450) {
-      setOffset(
-        offset.map((item, offsetIndex) =>
-          item.map((num, index) =>
-            Math.max(
-              (1 - (scrollTop - 622) / 799) * initPosCopy[offsetIndex][index],
-              0
-            )
-          )
+  if (clientWidth <= 920) {
+    position = position.map(item => item.fill(0));
+  } else if (clientWidth > 920 && afterScrollTop >= 622) {
+    const startSetting = clientWidth > 1024 ? 622 : 420;
+    position = position.map((item, positionIndex) =>
+      item.map((num, innerIndex) =>
+        Math.max(
+          (1 - (afterScrollTop - startSetting) / 799) *
+            positionCopy[positionIndex][innerIndex],
+          0
         )
-      );
-    }
-  };
+      )
+    );
+  }
 
   const handleClick = () => {
     const afterSort = people.sort(() => 0.5 - Math.random());
@@ -56,7 +46,7 @@ export default function Person() {
   const setStyle = index => {
     let style = {};
     const setDetail = (row, innerIndex) => ({
-      transform: `translateY(${offset[row][innerIndex]}px)`
+      transform: `translateY(${position[row][innerIndex]}px)`
     });
 
     if (index <= 5) {
@@ -98,7 +88,9 @@ export default function Person() {
     <div id="part3">
       <div className="part3-container">
         <div className="left-container">
-          <div className="title">成长是一场团战</div>
+          <div className="title">
+            <img src={t3} alt="" />
+          </div>
           <div className="content">
             <p>
               从一开始的几人团队到现在四十多位同学的工作室，青柚工作室吸引并包容越来越多志同道合的朋友们加入。
@@ -111,13 +103,13 @@ export default function Person() {
           <div className="people-num">
             <div className="num-item">
               <div className="num">
-                50<span>人</span>
+                <img src={n1} alt="" />
               </div>
               <div className="tag">工作室成员数</div>
             </div>
             <div className="num-item">
               <div className="num">
-                18<span>人</span>
+                <img src={n2} alt="" />
               </div>
               <div className="tag">毕业成员数</div>
             </div>

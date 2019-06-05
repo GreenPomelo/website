@@ -1,6 +1,6 @@
 #part4
   width: 100vw;
-  height: 58rem;
+  height: 88rem;
   background-image: url("../../assets/bg4.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -9,7 +9,11 @@
   align-items: center;
   justify-content: center;
   padding-top: 3rem;
+  @media screen and (max-width: 920px)
+    height: 93rem;
+    padding-top: 0rem;
   .mascot
+    margin-top: -10rem;
     width: 18rem;
     height: 29rem;
     position: absolute;
@@ -35,6 +39,7 @@
       font-stretch: normal;
       letter-spacing: 0rem;
       color: #6ba32a;
+      margin-top: 0rem;
   .goal-desc
     display: flex;
     flex-direction: column;
@@ -72,11 +77,12 @@
     letter-spacing: 0rem;
     color: #6ba32a;
     margin-bottom: 4rem;
+    margin-top: 1.3rem;
     @media screen and (max-width: 920px)
       margin-bottom: 1rem;
   .goal-card-set
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     width: 70vw;
     @media screen and (max-width: 920px)
@@ -89,12 +95,14 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      margin-left: 0.1rem;
-      margin-right: 0.1rem;
+      margin-left: 0.6rem;
+      margin-right: 0.6rem;
       @media screen and (max-width: 920px)
         width: 21rem;
-        height: 8rem;
+        height: 11rem;
         margin-top: 0.5rem;
+        margin-left: 0rem;
+        margin-right: 0rem;
       .goal-card-text
         height: 2rem;
         font-family: PingFangSC-Regular;
@@ -104,6 +112,12 @@
         letter-spacing: 0rem;
         color: #ffffff;
         transform: translateX(1.2rem);
+        @media screen and (max-width: 1600px) and (min-width: 1400px)
+          font-size: 1.6rem;
+        @media screen and (max-width: 1400px) and (min-width: 1200px)
+          font-size: 1.4rem;
+        @media screen and (max-width: 1200px) and (min-width: 920px)
+          font-size: 1.2rem;
       .goal-card-sub-text
         margin-top: 1rem;
         width: 5rem;
@@ -115,3 +129,78 @@
         letter-spacing: 0rem;
         color: rgba(255, 255, 255, 0.5);
         transform: translateX(1.2rem);
+  .goal-divide-line
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    width: 90rem;
+    height: 0.1rem;
+    background-color: #c0c4cc;
+    @media screen and (max-width: 920px)
+      width: 21rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+  .goal-open-source
+    background-image: -webkit-linear-gradient(0deg, #8bd21e, #d8d23e); 
+    width: 83rem;
+    height: 22rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media screen and (max-width: 920px)
+      width: 21rem;
+      height: 25rem;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+    .goal-open-source-git
+      width: 29rem;
+      height: 18rem;
+      margin-right: 3rem;
+      @media screen and (max-width: 920px)
+        width: 16rem;
+        height: 9rem;
+        margin-right: 0rem;
+        align-self: center;
+        margin-top: 2rem;
+    .goal-open-source-text-div
+      margin-left: 3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 14rem;
+      justify-content: space-between;
+      @media screen and (max-width: 920px)
+        margin-left: 0rem;
+        align-items: flex-start;
+        height: 9rem;
+        margin-left: 1.7rem;
+      .goal-open-source-text-div-title
+        height: 5.5rem;
+        transform: translateX(-1rem);
+        @media screen and (max-width: 920px)
+          height: 3.3rem;
+          transform: translateX(0rem);
+      .goal-open-source-text-div-contents
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        .goal-open-source-text-div-content1
+          width: 18rem;
+          font-family: PingFangSC-Semibold;
+          font-size: 1.6rem;
+          font-weight: normal;
+          font-stretch: normal;
+          letter-spacing: 0rem;
+          color: rgba(255, 255, 255, 0.7);
+          @media screen and (max-width: 920px)
+            font-size: 1rem;
+        .goal-open-source-text-div-content2
+          width: 20rem;
+          font-family: PingFangSC-Semibold;
+          font-size: 1.6rem;
+          font-weight: normal;
+          font-stretch: normal;
+          letter-spacing: 0rem;
+          color: #ffffff;
+          @media screen and (max-width: 920px)
+            font-size: 1rem;

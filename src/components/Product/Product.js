@@ -1,6 +1,7 @@
 import React from 'react';
 import './Product.sass';
 
+import t2 from '../../assets/word/t2.png';
 import iphone1 from '../../assets/iphone/1.png';
 import iphone2 from '../../assets/iphone/2.png';
 import iphone3 from '../../assets/iphone/3.png';
@@ -14,10 +15,10 @@ export default function Product({
   let rightDistance3 = 0;
   if (clientWidth <= 920) {
     rightDistance3 = -8;
-  } else if (clientWidth > 920 && afterScrollTop > 650) {
+  } else if (clientWidth > 920 && afterScrollTop > 500) {
     const base = Math.max(
       0,
-      1.5 * ((10 * (180 - (afterScrollTop - 650))) / 300)
+      1.5 * ((10 * (180 - (afterScrollTop - 500))) / 300)
     );
     rightDistance2 = base;
     rightDistance3 = base > 4.5 ? 2 * (9 - base) : 2 * base;
@@ -25,7 +26,9 @@ export default function Product({
 
   return (
     <div id="part2">
-      <div className="product-title">用心,做自己也喜欢的产品</div>
+      <div className="product-title">
+        <img src={t2} alt="" />
+      </div>
       <div className="product-desc">
         <div className="product-desc-item">
           南邮小程序、校谈、期末报告单、社团招新系统、你头像真棒等等，
@@ -48,7 +51,7 @@ export default function Product({
             style={{ zIndex: 5 }}
           />
           <img
-            className="product-show-item"
+            className="product-show-item iphone2"
             style={{ zIndex: 4, marginTop: `${rightDistance2}rem` }}
             src={iphone2}
             alt=""
