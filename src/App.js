@@ -10,7 +10,11 @@ function App() {
   const [clientWidth, setClientWidth] = useState(0);
   useEffect(() => {
     const handleScroll = () => {
-      setAfterScrollTop(document.documentElement.scrollTop);
+      const scrollTop =
+        window.scrollY ||
+        document.documentElement.scrollTop ||
+        window.pageYOffset;
+      setAfterScrollTop(scrollTop);
       setClientWidth(document.body.clientWidth);
     };
 
@@ -30,13 +34,15 @@ function App() {
     <div className="App">
       {useMemo(
         () => (
-          <Header distanceObj={{ afterScrollTop, clientWidth }} />
+          <Header distanceObj={{ afterScrollTop: offsetHeader, clientWidth }} />
         ),
         [offsetHeader, clientWidth]
       )}
       {useMemo(
         () => (
-          <Product distanceObj={{ afterScrollTop, clientWidth }} />
+          <Product
+            distanceObj={{ afterScrollTop: offsetProduct, clientWidth }}
+          />
         ),
         [offsetProduct, clientWidth]
       )}
