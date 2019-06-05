@@ -39,14 +39,18 @@ export default function Footer() {
                     <a href="https://github.com/GreenPomelo">开源仓库</a>
                   </li>
                   <li className="item">
-                    <a href="https://github.com/GreenPomelo">青柚认证系统</a>
+                    <a href="https://oauth.qingyou.ren/">青柚认证系统</a>
                   </li>
                 </div>
                 <div className="user info">
                   <li className="title">用户</li>
                   <li className="item">用户反馈</li>
                   <li className="item">交流体验</li>
-                  <li className="item">青柚公开课</li>
+                  <li className="item">
+                    <a href="https://www.yuque.com/qingyou/ndwpvv">
+                      青柚公开课
+                    </a>
+                  </li>
                   <li className="item">用户隐私</li>
                 </div>
               </div>
