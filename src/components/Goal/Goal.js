@@ -84,7 +84,12 @@ export default function Goal({ distanceObj: { afterScrollTop, clientWidth } }) {
             <div className="goal-open-source-text-div-content1">
               开放和共享是一种学习。
             </div>
-            <div className="goal-open-source-text-div-content2">
+            <div
+              className="goal-open-source-text-div-content2"
+              onClick={() => {
+                window.location.href = `https://github.com/GreenPomelo`;
+              }}
+            >
               访问青柚的 GitHub 仓库 >
             </div>
           </div>
