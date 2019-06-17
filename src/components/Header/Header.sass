@@ -22,6 +22,10 @@
     justify-content: center;
     position: relative;
     height: 100vh;
+    // for 3d effection
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    perspective-origin: 75% 75%;
     @media screen and (max-width: 1250px)
       width: 100vw;
       height: 100%;
@@ -159,6 +163,21 @@
       background-size: 100% 100%;
       width: 51.25rem;
       height: 38.125rem;
+      animation: flip-x 1.3s linear 1;
+      transform-origin: bottom;
+      @keyframes flip-x 
+        0%
+          transform: rotateX(-45deg) translateX(40vw);
+        50%
+          transform: rotateX(10deg) translateX(40vw);
+        70%
+          transform: rotateX(-6deg) translateX(40vw);
+        85%
+          transform: rotateX(4deg) translateX(40vw);
+        95%
+          transform: rotateX(-2deg) translateX(40vw);
+        100%
+          transform: rotateX(0deg) translateX(40vw);
       @media screen and (max-width: 1250px)
         width: 40.625rem;
         height: 31.25rem;
