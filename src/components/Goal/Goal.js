@@ -7,6 +7,9 @@ import x from '../../assets/x.png';
 import q from '../../assets/q.png';
 import git from '../../assets/git.png';
 import w4 from '../../assets/word/w4.png';
+import w1 from '../../assets/word/w1.png';
+import w2 from '../../assets/word/w2.png';
+import w3 from '../../assets/word/w3.png';
 
 export default function Goal({ distanceObj: { afterScrollTop, clientWidth } }) {
   let distance = 0;
@@ -27,7 +30,7 @@ export default function Goal({ distanceObj: { afterScrollTop, clientWidth } }) {
         src={q}
         alt=""
       />
-      <div className="goal-title">取悦自己,服务他人</div>
+      <div className="goal-title" />
       <div className="goal-desc">
         <div className="goal-desc-item">
           我们不会没有任何目的性地去做一件事。我们的目的是什么？
@@ -51,7 +54,7 @@ export default function Goal({ distanceObj: { afterScrollTop, clientWidth } }) {
             backgroundImage: `url('${blue}')`
           }}
         >
-          <div className="goal-card-text">技术服务用户</div>
+          <img className="goal-card-text-image" src={w1} alt="技术服务用户" />
           <div className="goal-card-sub-text">用户原则</div>
         </div>
         <div
@@ -60,7 +63,7 @@ export default function Goal({ distanceObj: { afterScrollTop, clientWidth } }) {
             backgroundImage: `url('${pink}')`
           }}
         >
-          <div className="goal-card-text">热爱驱动使命</div>
+          <img className="goal-card-text-image" src={w2} alt="热爱驱动使命" />
           <div className="goal-card-sub-text">团队共识</div>
         </div>
         <div
@@ -69,7 +72,7 @@ export default function Goal({ distanceObj: { afterScrollTop, clientWidth } }) {
             backgroundImage: `url('${orange}')`
           }}
         >
-          <div className="goal-card-text">实践促成进步</div>
+          <img className="goal-card-text-image" src={w3} alt="实践促成进步" />
           <div className="goal-card-sub-text">项目目的</div>
         </div>
       </div>

@@ -133,7 +133,7 @@ export default function Person({
             })}
           </div>
           <div className="random" onClick={handleClick}>
-            随机换一换
+            换一拨
           </div>
         </div>
       </div>

@@ -44,10 +44,10 @@ export default function Header({
               今天，我们有超过五万用户，超过一万日活，超过十万日访问量，超过千万次接口调用。
             </p>
             <p className="head-content">
-              我们在和肖晨旭一起成长，一起进步，一起变得强大，
+              我们在和肖辰旭一起成长，一起进步，一起变得强大，
             </p>
             <p className="head-content">却从未忘却初心。</p>
-            <p className="head-content last">两年，继续前进</p>
+            <p className="head-content last">两年，继续前进！</p>
           </div>
           <div className="more">了解我们的更多 > </div>
         </div>

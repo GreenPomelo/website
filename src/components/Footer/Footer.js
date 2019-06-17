@@ -14,7 +14,7 @@ export default function Footer() {
                 <div className="logo">
                   <img src={QyLogo} alt="" />
                 </div>
-                <div className="slogan">用爱发电,创造可能</div>
+                <div className="slogan">用热爱创造无限可能</div>
               </div>
               <div className="info-part">
                 <div className="about info">
