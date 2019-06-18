@@ -41,10 +41,11 @@ export default function Header({
               2017年春天，南邮小程序上显示出第一句"Hello, world"，
             </p>
             <p className="head-content">
-              今天，我们有超过五万用户，超过一万日活，超过十万日访问量，超过千万次接口调用。
+              今天，我们有超过五万用户，超过一万日活，<br/>
+              超过十万日访问量，超过千万次接口调用。
             </p>
             <p className="head-content">
-              我们在和肖辰旭一起成长，一起进步，一起变得强大，
+              我们和肖辰旭一起成长，一起进步，一起变得强大，
             </p>
             <p className="head-content">却从未忘却初心。</p>
             <p className="head-content last">两年，继续前进！</p>
