@@ -1,0 +1,29 @@
+$phone: 660px
+$ipad: 1300px
+
+.title-bubble
+  background: rgba(34, 181, 116, 0.39)
+  border-radius: 100%
+  position: absolute
+  height: 2rem
+  width: 2rem
+  z-index: -1; // 保证在标题的后面
+  @media(max-width: $phone)
+    height: 1.5rem
+    width: 1.5rem
+.bubble1
+  top: -0.5rem
+  left: -1rem
+  animation: flow 4s ease infinite
+.bubble2
+  top: 1rem
+  left: -0.8rem
+  animation: flow 4s 2s ease infinite
+  
+@keyframes flow
+    0%
+      transform: scale(1)
+    50%
+      transform: scale(1.5)
+    100%
+      transform: scale(1)
