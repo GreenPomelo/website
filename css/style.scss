@@ -1,0 +1,456 @@
+@charset "utf-8";
+$main-color:#002426;//主色
+$help-color:#fff;//辅助色
+$help-color-white:rgba(255, 255, 255,0.3);//辅助色-2
+
+html{
+  font-size: (62.5%*2);
+  //transform: scale(-1,1);
+  //全局rem = 20px；
+  //考虑到chrome浏览器
+  //625%有尚未理解和解决的bug
+}
+
+html,body{
+  height: 100%;
+}
+
+body{
+  color: $help-color;
+  background-color: $main-color;
+  box-sizing: border-box;
+  font-family: "PingFang SC","Arial";
+}
+
+*{
+  //所有元素不可选中
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+  box-sizing: border-box;
+  line-height: 1.618;
+  margin: 0;
+  padding: 0;
+}
+
+//缩紧两个字符
+.suojin{text-indent:2rem}
+
+p{
+  font-size:1.2rem;
+  font-weight: 300;
+  line-height: 1.618;
+}
+
+nav{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right:0;
+  display: flex;
+  align-items:center;
+  justify-content:space-around;
+  padding: 1rem 12%;
+  font-size: 1rem;
+  font-weight: normal;
+  font-stretch: normal;
+  //background-color: navajowhite;
+  //overflow:hidden;
+  background-image: linear-gradient(180deg,
+          #002426 0%,
+          rgba(0, 36, 38, 0.47) 100%);
+  z-index: 1000;
+  ul{
+    //padding: 0;
+    //margin:0;
+    //margin-left: 12.35rem;
+    //display: flex;
+    //justify-content: space-between;
+    white-space:nowrap//不换行
+  }
+  li{
+    list-style-type:none;
+    display:inline-block;
+    margin: 0 1rem;
+    padding: 0.2rem 0;
+  }
+  //line-height: 0rem;
+  //letter-spacing: 0rem;
+}
+
+
+.studio-logo{
+  img{
+    width:3rem;
+    margin:0 1rem;
+  }
+}
+
+.banner{
+  position: relative;
+  //height: 120% !important;//bug -> 在使用scrollr下用% 会使得banner的高度为整个html的高度的120%
+  height: 100vh;
+  overflow: hidden;
+
+  .container{
+    //width: 48rem;
+    height: 100%;
+    //margin: 0 auto;
+    //margin-top:13.05rem;
+    //margin-bottom: 3.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    //flex-direction: co;
+    flex-wrap: wrap;
+    align-content:center;
+  }
+  .banner-h1{
+    font-size: 4.6rem;
+    font-weight: normal;
+    font-stretch: normal;
+    white-space: nowrap;
+  }
+
+  //.banner-p{
+  //  font-size: 1rem;
+  //  font-weight: normal;
+  //  font-stretch: normal;
+  //  width: 20.95rem;
+  //  text-align:justify;
+  //}
+  //}
+  //.banner-p,.banner-h1{
+  //  display: inline-block;
+  //  margin: 0 1rem;
+  //}
+  img{
+    display: block;
+    width: 150vw;//宽度还可以在考虑一下
+    //height: 40vh;
+    position: absolute;
+    bottom: 0;//20视窗高度
+    //animation: wave-move 2s infinite ;
+  }
+    .wave-left{
+      left: -50vw;
+      //animation: wave-move-left 4s ease-in-out infinite alternate ;
+    }
+    .wave-right{
+      left: 0;
+      //animation: wave-move-right 4s ease-in-out infinite alternate;
+    }
+}
+
+
+
+//分割线的样式
+.divide-line{
+  //box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+  //padding-left: 4.6rem;
+  //padding-right:4.6rem;
+  //vertical-align: middle;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  //justify-content: center;
+  h2{
+    background-color: $help-color;
+    color: $main-color;
+    font-size: 1.8rem;
+    font-weight: 300;
+    font-stretch: normal;
+    padding :0.55rem 1.2rem;
+    //margin: 2.55rem auto 5.15rem auto;
+    box-shadow: 10px 0px 0px $help-color-white;
+  }
+  .straight-line{
+    height: 3px;
+    flex-grow: 1;
+    background-color: $help-color;
+  }
+}
+
+//
+@keyframes wave-move-left {
+  from{}
+  to{
+    left:-100vw;
+  }
+}
+
+@keyframes wave-move-right {
+  from{}
+  to{
+    right:-100vw;
+  }
+}
+
+//各部分之间的外边距
+.section-margin{
+  margin-bottom: 6.5rem;
+}
+//
+//about-us
+//
+.about-us{
+  text-align: left;
+  & > h3{
+    margin-left: 12%;
+    display: inline-block;
+    background-color: transparent;
+    color: $help-color;
+    font-size: 1.8rem;
+    font-weight: 300;
+    font-stretch: normal;
+    padding :0.1rem 1.2rem;
+    margin-top:2rem;
+    margin-bottom:2rem;
+    overflow: hidden;
+    border-left: 3px solid $help-color;
+  }
+  .studio-inf{
+    padding:0 12%;
+    text-align: justify;
+  }
+  .scalpture{
+    text-align: left;
+    //margin: 0 auto;
+    padding: 0 12%;
+    //display: flex;
+    //flex-warp:wrap;
+    //justify-content: space-around;
+    div{
+      display: inline-block;
+      width: 2rem;
+      height: 2rem;
+      margin: 2rem 1rem;
+      border-radius: 1rem;
+      overflow: hidden;
+      background-color: #ffffff;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      //img{}
+    }
+  }
+}
+.person-inf-box{
+  width: 30vw;
+  color: $main-color;
+  background-color: $help-color;
+  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  left:50vw;
+  transform: translate(-50%,-20%);
+  opacity: 1;
+  animation: fadeIn .3s  1 ;
+}
+
+@keyframes fadeIn{
+  from{
+    opacity: 0.3;
+    transform: translate(-50%,0%);
+  }
+  to{
+    opacity:1;
+    transform: translate(-50%,-20%);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .person-inf-box{
+    width: 70vw;
+  }
+}
+
+
+.project-banner{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 12%;
+  .project-card{
+    position: relative;
+    margin: 1rem;
+    width: 18rem;
+    //height: 30rem;
+    background-color: #ffffff;
+    .project-img{
+      width: 18rem;
+      height: 18rem;
+      background-color: gray;
+      position: absolute;
+      top:0;
+      left: 0;
+    }
+  }
+}
+.project-title{
+  width: calc(18rem - 2rem);
+  margin:19rem 1rem 1rem 1rem;
+  color: $main-color;
+  font-size: 2rem;
+  font-weight: 200;
+  text-align: center;
+}
+//
+//join-us
+//
+.join-us{
+  text-align: center;
+  img{
+    width: 16rem;
+    margin-bottom: 5rem;
+    margin-top: 5rem;
+  }
+  .join-us-banner{
+    display: flex;
+    //align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 12%;
+    .join-us-box{
+      color: $main-color;
+      width: 18rem;
+      padding: 1rem;
+      margin: 1rem;
+      background-color: $help-color;
+      transition: all .3s ease-out 0s;
+      //height: ;
+      .work-title{
+        border-bottom: 2px $main-color solid;
+      }
+      //.work-inf{
+      //  vertical-align: middle;
+      //}
+      span{
+        font-size: 2rem;
+        font-weight: 300;
+        font-stretch: normal;
+      }
+      p{
+        margin: 1rem 0;
+        text-align: justify;
+      }
+    }
+  }
+  //.coder , .designer{
+  //  margin-top: 5rem;
+  //  div{
+  //    display: flex;
+  //    justify-content: center;
+  //  }
+  //  span{
+  //    margin: 0 2.62rem;
+  //    font-size: 2.4rem;
+  //    font-weight: normal;
+  //    font-stretch: normal;
+  //  }
+  //}
+}
+
+//
+//联系我们
+//
+.connact-us{
+  //text-align: center;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  height: 22rem;
+  span{
+    border-bottom: 2px $help-color solid;
+    white-space: nowrap;
+    padding-right: 0.2rem;
+    padding-left: 0.2rem;
+    margin: 1rem;
+  }
+}
+
+//
+//版权部分
+//
+.copyright-inf{
+  text-align: center;
+  background-color: $help-color;
+  p{
+    color: $main-color;
+    font-size: 0.6rem;
+    padding: 0.6rem;
+  }
+
+}
+
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 1056px) {
+  .banner{
+    .container{
+      display: flex;
+      //flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      //padding-top: 20vh;
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  nav{
+    flex-wrap: wrap;
+    justify-content: center;
+    div{
+      display: block;
+    }
+    ul{
+      li{
+        margin: 0 0.5rem;
+      }
+    }
+  }
+  .banner{
+    height: 100vh;
+  }
+  .about-us{
+    .scalpture{
+      div{
+        margin: 1rem 0.8rem;
+      }
+    }
+  }
+
+}
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+  html{
+    font-size: calc(62.5% * 1.6);
+  }
+  .banner{
+    .banner-h1{
+      //font-size: 3.4rem;
+    }
+  }
+  .banner{
+      .move-wave{
+        img{
+          width: 200vw;
+        }
+      }
+  }
+}
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) {}
+
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) {}
+
+// Extra large devices (large desktops)
+// No media query since the extra-large breakpoint has no upper bound on its width

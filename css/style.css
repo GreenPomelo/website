@@ -1,0 +1,268 @@
+html {
+  font-size: 125%;
+  height: 100%;
+  margin: 0;
+  padding: 0; }
+
+body {
+  height: 100%;
+  color: #fff;
+  background-color: #002426;
+  box-sizing: border-box;
+  font-family: "PingFang SC","Arial"; }
+
+* {
+  box-sizing: border-box;
+  user-select: none;
+  line-height: 1.618; }
+
+p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.618; }
+
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem 12%;
+  font-size: 1rem;
+  font-weight: normal;
+  font-stretch: normal;
+  background-image: linear-gradient(180deg, #002426 0%, rgba(0, 36, 38, 0.47) 100%);
+  z-index: 1000; }
+  nav ul {
+    padding: 0;
+    margin: 0;
+    white-space: nowrap; }
+  nav li {
+    list-style-type: none;
+    display: inline-block;
+    margin: 0 1rem;
+    padding: 0.2rem 0; }
+
+.hvr-underline-from-left {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+  overflow: hidden; }
+
+.hvr-underline-from-left:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  background: #fff;
+  height: 3px;
+  -webkit-transition-property: right;
+  transition-property: right;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out; }
+
+.hvr-underline-from-left:hover:before, .hvr-underline-from-left:focus:before, .hvr-underline-from-left:active:before {
+  right: 0; }
+
+.studio-logo img {
+  width: 3rem;
+  margin: 0 1rem; }
+
+.banner {
+  position: relative;
+  height: 120%;
+  overflow: hidden; }
+  .banner .container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .banner .banner-h1 h1 {
+    font-size: 4.6rem;
+    font-weight: bold;
+    font-stretch: normal; }
+  .banner .banner-p {
+    font-size: 1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    width: 20.95rem;
+    text-align: justify; }
+  .banner .move-wave img {
+    display: block;
+    width: 200vw;
+    position: absolute;
+    bottom: 0; }
+  .banner .move-wave .wave-left {
+    left: 0;
+    animation: wave-move-left 4s ease-in-out infinite alternate; }
+  .banner .move-wave .wave-right {
+    right: 0;
+    animation: wave-move-right 4s ease-in-out infinite alternate; }
+
+.divide-line {
+  width: 100%;
+  overflow: hidden;
+  padding: 0 5%;
+  display: flex;
+  align-items: center; }
+  .divide-line h2 {
+    background-color: #fff;
+    color: #002426;
+    font-size: 1.8rem;
+    font-weight: normal;
+    font-stretch: normal;
+    padding: 0.55rem 1.2rem;
+    box-shadow: 10px 10px 0px rgba(255, 255, 255, 0.3); }
+  .divide-line .straight-line {
+    height: 3px;
+    flex-grow: 1;
+    background-color: #fff; }
+
+@keyframes wave-move-left {
+  to {
+    left: -100vw; } }
+@keyframes wave-move-right {
+  to {
+    right: -100vw; } }
+.section-margin {
+  margin-bottom: 6.5rem; }
+
+.about-us {
+  text-align: left; }
+  .about-us > h3 {
+    margin-left: 12%;
+    display: inline-block;
+    background-color: transparent;
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: normal;
+    font-stretch: normal;
+    padding: 0.1rem 1.2rem;
+    overflow: hidden;
+    border-left: 3px solid #fff; }
+  .about-us .studio-inf {
+    padding: 0 12%;
+    text-align: justify; }
+  .about-us .scalpture {
+    text-align: center;
+    padding: 0 12%; }
+    .about-us .scalpture div {
+      display: inline-block;
+      width: 2rem;
+      height: 2rem;
+      margin: 2rem 1rem;
+      background-color: #ffffff;
+      border-radius: 1rem;
+      overflow: hidden; }
+
+.project-banner {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 12%; }
+  .project-banner .project-card {
+    position: relative;
+    margin: 1rem;
+    width: 18rem;
+    background-color: #ffffff; }
+    .project-banner .project-card .project-img {
+      width: 18rem;
+      height: 18rem;
+      background-color: gray;
+      position: absolute;
+      top: 0;
+      left: 0; }
+    .project-banner .project-card p {
+      width: calc(18rem - 2rem);
+      margin: 19rem 1rem 1rem 1rem;
+      color: #002426; }
+
+.join-us {
+  text-align: center; }
+  .join-us img {
+    width: 16rem;
+    margin-bottom: 5rem;
+    margin-top: 5rem; }
+  .join-us .join-us-banner {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 12%; }
+    .join-us .join-us-banner .join-us-box {
+      color: #002426;
+      width: 18rem;
+      padding: 1rem;
+      margin: 1rem;
+      background-color: #fff;
+      transition: all .3s ease-out 0s; }
+      .join-us .join-us-banner .join-us-box .work-title {
+        border-bottom: 3px #002426 solid; }
+      .join-us .join-us-banner .join-us-box span {
+        font-size: 2.4rem;
+        font-weight: normal;
+        font-stretch: normal; }
+      .join-us .join-us-banner .join-us-box p {
+        margin: 1rem;
+        text-align: justify; }
+
+.join-us-box:hover, join-us-box:focus, join-us-box:active {
+  transform: translate(-10px, -10px);
+  box-shadow: 10px 10px 0px rgba(255, 255, 255, 0.3); }
+
+.connact-us {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 22rem; }
+  .connact-us span:not(:last-child) {
+    border-right: 0.3rem rgba(255, 255, 255, 0.3) solid; }
+  .connact-us span {
+    padding-right: 1.4rem;
+    padding-left: 1.4rem; }
+
+.copyright-inf {
+  text-align: center;
+  background-color: #fff; }
+  .copyright-inf p {
+    color: #002426;
+    font-size: 0.6rem;
+    padding: 0.6rem; }
+
+@media (max-width: 1056px) {
+  .banner .container {
+    display: flex;
+    justify-content: center;
+    align-items: center; } }
+@media (max-width: 767.98px) {
+  nav {
+    flex-wrap: wrap;
+    justify-content: center; }
+    nav div {
+      display: block; }
+    nav ul li {
+      margin: 0 0.5rem; }
+
+  .banner {
+    height: 100%; }
+
+  .about-us .scalpture div {
+    margin: 1rem 0.8rem; } }
+@media (max-width: 575.98px) {
+  html {
+    font-size: calc(62.5% * 1.6); }
+
+  .banner .move-wave img {
+    width: 200vw; } }
+
+/*# sourceMappingURL=style.css.map */
