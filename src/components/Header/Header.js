@@ -1,7 +1,6 @@
 import React from 'react';
 import './Header.sass';
 import QyLogo from '../../assets/qylogo.png';
-import t1 from '../../assets/word/t1.png';
 
 export default function Header({
   distanceObj: { afterScrollTop, clientWidth }
@@ -33,17 +32,15 @@ export default function Header({
           <button>用户服务</button>
         </div>
         <div className="head-content-container">
-          <div className="content-title">
-            <img src={t1} alt="" />
-          </div>
+          <div className="content-title" />
           <div className="content-container">
             <p className="head-content">
               2017年春天，南邮小程序上显示出第一句"Hello, world"，
             </p>
             <p className="head-content">
-              今天，我们有超过五万用户，超过一万日活，
+              今天，我们有超过7万用户，超过1.3万日活，
               <br />
-              超过十万日访问量，超过千万次接口调用。
+              超过10万日访问量，超过2000万次接口调用。
             </p>
             <p className="head-content">
               我们和肖辰旭一起成长，一起进步，一起变得强大，

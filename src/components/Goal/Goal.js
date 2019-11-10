@@ -32,18 +32,16 @@ export default function Goal({ distanceObj: { afterScrollTop, clientWidth } }) {
       />
       <div className="goal-title" />
       <div className="goal-desc">
+        <div className="goal-desc-item">青柚人的目的是什么?</div>
         <div className="goal-desc-item">
-          我们不会没有任何目的性地去做一件事。我们的目的是什么？
+          看到南邮小程序99.99%的覆盖率，看到期末报告单在朋友圈里刷屏，
         </div>
         <div className="goal-desc-item">
-          看到每个同学都在使用南邮小程序，看到期末报告单在朋友圈里刷屏，
+          看到同学们在表白墙吐槽我们的功能不够完善，看到有人向朋友炫耀南邮的信息化。
         </div>
+        <div className="goal-desc-item">我们不愿主动追求物质上的奖励，</div>
         <div className="goal-desc-item">
-          看到同学们在表白墙吐槽我们的功能不够完善，看到有人向朋友炫耀南邮人的小程序。
-        </div>
-        <div className="goal-desc-item">物质或许不是我们追求的目的，</div>
-        <div className="goal-desc-item">
-          用技术服务更多人来取悦自己的精神享受，更加值得回味。
+          仅希望用技术服务更多人，用以取悦自己。
         </div>
       </div>
       <div className="goal-more">了解青柚团队的共识 ></div>

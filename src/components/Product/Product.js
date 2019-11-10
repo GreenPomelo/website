@@ -37,11 +37,9 @@ export default function Product({
           我们既是这些产品的开发者，也是他们最忠实的用户，更是最能挑刺的人。
         </div>
         <div className="product-desc-item">
-          做对得起自己的事，做自己都喜欢用的产品，
+          做自己会用的产品，做自己也喜欢用的产品，
         </div>
-        <div className="product-desc-item">
-          我们始终用心去做让自己满意的事。
-        </div>
+        <div className="product-desc-item">用心，做让自己心满意足的事。</div>
         <div className="product-desc-more">了解我们的更多产品 ></div>
         <div className="product-show">
           <img
