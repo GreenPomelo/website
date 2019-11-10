@@ -41,7 +41,8 @@ export default function Header({
               2017年春天，南邮小程序上显示出第一句"Hello, world"，
             </p>
             <p className="head-content">
-              今天，我们有超过五万用户，超过一万日活，<br/>
+              今天，我们有超过五万用户，超过一万日活，
+              <br />
               超过十万日访问量，超过千万次接口调用。
             </p>
             <p className="head-content">

@@ -51,8 +51,9 @@ export default function Goal({ distanceObj: { afterScrollTop, clientWidth } }) {
         <div
           className="goal-card"
           style={{
-            backgroundImage: `url('${blue}') ` ,backgroundColor: '#7EC7FF'
-          }} 
+            backgroundImage: `url('${blue}') `,
+            backgroundColor: '#7EC7FF'
+          }}
         >
           <img className="goal-card-text-image" src={w1} alt="技术服务用户" />
           <div className="goal-card-sub-text">用户原则</div>
@@ -60,8 +61,9 @@ export default function Goal({ distanceObj: { afterScrollTop, clientWidth } }) {
         <div
           className="goal-card"
           style={{
-            backgroundImage: `url('${pink}') ` ,backgroundColor: '#FFACB0'
-          }} 
+            backgroundImage: `url('${pink}') `,
+            backgroundColor: '#FFACB0'
+          }}
         >
           <img className="goal-card-text-image" src={w2} alt="热爱驱动使命" />
           <div className="goal-card-sub-text">团队共识</div>
@@ -69,7 +71,8 @@ export default function Goal({ distanceObj: { afterScrollTop, clientWidth } }) {
         <div
           className="goal-card"
           style={{
-            backgroundImage: `url('${orange}')` ,backgroundColor: '#FFBE54'
+            backgroundImage: `url('${orange}')`,
+            backgroundColor: '#FFBE54'
           }}
         >
           <img className="goal-card-text-image" src={w3} alt="实践促成进步" />
