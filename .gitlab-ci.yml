@@ -1,0 +1,61 @@
+image: node:10
+
+stages:
+  - install
+  - build
+  - test
+  - deploy
+
+install:
+  stage: install
+  tags:
+    - frontend
+  script:
+    - npm config set sass-binary-site https://npm.taobao.org/mirrors/node-sass
+    - npm install --registry=https://registry.npm.taobao.org
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  untracked: true
+  paths:
+    - node_modules/
+
+build:
+  stage: build
+  tags:
+    - frontend
+  script:
+    - npm run build
+  artifacts:
+    paths:
+      - build
+    expire_in: 1 week
+  dependencies:
+    - install
+
+lint:
+  stage: test
+  tags:
+    - frontend
+  script:
+    - npm run lint
+  dependencies:
+    - install
+  allow_failure: true
+
+deploy:
+  image: eeacms/rsync:latest
+  stage: deploy
+  tags:
+    - frontend
+  script:
+    - mkdir -p ~/.ssh && chmod 700 ~/.ssh/
+    - echo "$SSH_PRIVATE_KEY" >> ~/.ssh/id_rsa_rsync && chmod 600 ~/.ssh/id_rsa_rsync
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+    - rsync -rav -e "ssh -i /root/.ssh/id_rsa_rsync" --delete --chown=git:git ./build/ git@180.209.97.92:/var/www/html/stable/qingyou/
+    - rsync -rav -e "ssh -i /root/.ssh/id_rsa_rsync" --chown=git:git ./build/static/ git@180.209.97.92:/var/www/html/stable/static/
+  dependencies:
+    - build
+  only:
+    - master
+  when: manual
