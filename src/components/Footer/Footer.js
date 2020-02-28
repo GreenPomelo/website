@@ -70,6 +70,7 @@ export default function Footer() {
         <div className="bottom-part">
           <div className="copy-right">
             Copyright © 2019 Qingyou Studio. 保留所有权利。
+            <a href="http://www.beian.miit.gov.cn">鄂ICP备18011848号-2</a>
           </div>
         </div>
       </div>
